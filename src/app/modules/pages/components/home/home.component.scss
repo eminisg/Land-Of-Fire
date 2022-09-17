@@ -1,0 +1,286 @@
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  color: #fff;
+}
+
+h3 {
+  position: relative;
+  text-align: center;
+}
+
+.sections-title {
+  font-size: 4rem;
+  text-shadow: 2px 2px lightgray;
+}
+
+.work_with_us-title {
+  text-shadow: 2px 2px lightgray;
+  display: block;
+  text-align: center;
+}
+
+.about_us_sections-subtitle:after {
+  content: '';
+  display: block;
+  background-color: red;
+  width: 15rem;
+  height: 0.5rem;
+  margin: 1rem auto 0;
+}
+
+.logo {
+  max-width: 150px;
+  width: 100%;
+}
+
+.page-title {
+  font-size: 5.5rem !important;
+}
+
+.bgi {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.custom-title {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../../assets/imgs/city.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+.custom-banner {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../../assets/imgs/banner.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: block;
+
+}
+
+.custom-article {
+  background-color: dimgray;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: start;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid black;
+  padding: 2rem;
+  transition: .5s transform ease-in;
+  height: 304px;
+}
+
+
+.article-wrapper {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10rem 0;
+  margin: 0 5rem;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+
+.article-text {
+  color: white;
+}
+
+.card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.card-title {
+  color: white;
+  font-size: 3rem;
+  display: inline-flex;
+  position: absolute;
+  margin-bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+
+  transition: 0.3s all ease-in-out;
+
+}
+
+.card-title_img1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../../assets/imgs/truck_z1.jpg');
+  background-position: center;
+}
+
+.card-title_img2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../../assets/imgs/truck_z2.jpg');
+  background-position: center;
+}
+
+.card-title_img3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../../assets/imgs/truck_z3.jpg');
+  background-position: bottom;
+}
+
+.card-title_img4 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../../assets/imgs/settelite.webp');
+}
+
+.card-title_img5 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../../assets/imgs/truck3.webp');
+  background-position: center;
+}
+
+
+.card-title:hover {
+  opacity: 0;
+  transform: scale(2);
+}
+
+.img-circle {
+  max-width: 165px;
+  max-height: 165px;
+  margin-right: 2rem;
+}
+
+.article_scale-animation {
+  max-width: 500px;
+  transition: 0.2s all ease-in-out;
+  margin: 0 auto;
+}
+
+.article_scale-animation:hover {
+  transform: scale(1.1);
+}
+
+.work_with_us-articles_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 2rem;
+  column-gap: 2rem;
+  align-items: center;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.employee_slide-text {
+  font-size: 1.75rem;
+}
+
+
+.footer_links {
+  color: #000000 !important;
+  margin: 0 auto;
+  display: inline-flex;
+}
+
+.brokers-title {
+  color: #fff;
+  background-color: red;
+}
+
+.rating {
+  display: flex;
+}
+
+.slide1-wrapper {
+  display: inline-flex !important;
+  justify-content: space-between;
+}
+
+.rating_item {
+  max-width: 20px;
+  max-height: 20px;
+  cursor: pointer;
+  fill: #73ff !important;
+  color: red;
+}
+
+.rating_item svg path {
+  color: red !important;
+  fill: currentColor !important;
+}
+
+.active_star {
+
+}
+
+.swiper {
+  max-width: 600px;
+  max-height: 300px;
+}
+
+.rating_wrapper {
+  .mdi-star{
+    font-size: 1.5rem;
+    color: lightgray;
+    outline: red;
+  }
+}
+
+.slick-slider {
+  width: 88%;
+  margin: auto;
+  background: transparent;
+}
+
+body .slick-prev,
+body .slick-next {
+  height: 3rem;
+  width: 3rem;
+  background: lightgray !important;
+  z-index: 100;
+}
+
+.footer_address {
+  a{
+    font-size: 1.75rem
+  }
+  p{
+    font-size: 1.75rem
+  }
+  span{
+    font-size: 1.75rem
+  }
+}
+
+.message_popup {
+  position: center;
+  bottom: 5rem;
+  left: 5rem;
+}
+
+.custom_popup{
+  position: fixed;
+  margin: 0 auto;
+  max-width: 40rem;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}

@@ -1,0 +1,61 @@
+<section class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="card px-0" style="margin-top: 10rem; margin-bottom: 10rem;">
+        <div class="card-header">
+          <h3>REQUEST A FREIGHT QUOTE ONLINE
+            OR CALL US AT +1(929)489-2280</h3>
+        </div>
+        <div class="container p-4">
+          <h4>Please provide a few details regarding your truckload shipment. If possible, include information on the
+            lane, commodity, pick-up/delivery dates and equipment needed. Required fields are marked with an asterisk
+            (*)</h4>
+        </div>
+        <form class="row  card-body" [formGroup]="quoteForm" (ngSubmit)="submitQuote(quoteForm.value)">
+          <div class="col-md-6 ps-0 ">
+            <h4>General Information</h4>
+            <div class="mb-4">
+              <input type="text" class="form-control" id="firstName" placeholder="First Name" formControlName="name">
+            </div>
+            <div class="mb-4">
+              <input type="text" class="form-control" id="lastName" placeholder="Last Name" formControlName="lastName">
+            </div>
+            <h4>Company Information</h4>
+            <div class="mb-4">
+              <input type="text" class="form-control" id="companyName" placeholder="Company Name" formControlName="companyName">
+            </div>
+            <div class="mb-4">
+              <input type="text" class="form-control" id="companyAddress" placeholder="Company Address" formControlName="companyAddress">
+            </div>
+            <div class="row">
+              <div class="col-6 mb-4">
+                <input type="text" class="form-control" id="city" placeholder="City" formControlName="city">
+              </div>
+              <div class="col-6 mb-4">
+                <input type="text" class="form-control" id="state" placeholder="State" formControlName="state">
+              </div>
+            </div>
+            <div class="mb-4">
+              <input type="text" class="form-control" id="zip" placeholder="Zip" formControlName="zip">
+            </div>
+          </div>
+          <div class="col-md-6 ps-0 ps-md-3">
+            <h4>Contact Information</h4>
+            <div class="mb-4">
+              <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+            </div>
+            <div class="mb-4">
+              <input type="tel" class="form-control" id="phone" placeholder="Phone" formControlName="phone">
+            </div>
+            <div class="mb-4">
+              <h4>Freight description/Shipping details:</h4>
+              <textarea style="min-height: 7rem" class="form-control" id="text"
+                        placeholder="Type your message here..." formControlName="description"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-outline-primary  col-md-3 mt-5" >SUBMIT</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

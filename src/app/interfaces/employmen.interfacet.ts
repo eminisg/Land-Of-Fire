@@ -1,0 +1,40 @@
+export interface EmploymentInterface {
+  fullName:string
+  experience:string
+  noExperience: string
+  position: string
+  dateOfBirth:string
+  street:string
+  streetLine:string
+  email:string
+  phone:string
+  city:string
+  id:string
+  date:string
+  state:string
+  zip:string
+  streetPrev:string
+  streetLinePrev:string
+  cityPrev:string
+  statePrev:string
+  zipPrev:string
+  socialSecurity:string
+  emergencyFirstName:string
+  emergencyLastName:string
+  emergencyPhone:string
+  applied:string
+  work:string
+  anotherName:string
+  prevEmployment:string
+  prevEmploymentName:string
+  startWork:string
+  states:string
+  safeDrive:string
+  crime:string
+  explain:string
+  pendingCharges:string
+  highest:string
+  college:string
+  school:string
+  signed:string
+}

@@ -1,0 +1,451 @@
+<div class="px-0">
+  <section class="row position-relative custom-title mx-0 section" id="home">
+    <div class="container screen-adapt">
+      <h1 class="page-title">Transportation Experts</h1>
+      <button class="btn btn-outline-light btn-lg mt-4" (click)="toQuotes('quote')">REQUEST A QUOTE</button>
+    </div>
+  </section>
+  <section style="z-index: 10; background-color: dimgray;" class="section bottom hash-section" id="service">
+    <div>
+      <h2 style="background-color: black;color: white;" class="text-center py-2 mt-0 sections-title">OUR SERVICES</h2>
+      <hr class="my-2 custom-horizontal">
+      <div class="container-fluid custom-banner">
+        <div class="article-wrapper">
+          <article class="custom-article">
+            <p class="article-text">
+              With our excellent specialists and equipment, you can help ensure your stringent
+              requirements are met and your food and beverage products maintain their high quality. We
+              have access to the right mix of equipment and services to drive efficiencies and quality
+              into your Dry Load, temperature controlled or regular shipments.</p>
+            <span class="card-title card-title_img2">SPECIALIZED</span>
+          </article>
+          <article class="custom-article">
+            <h5 class="article-text">Full Truck Load is our customers most popular service.</h5>
+            <ul class="article-text">
+              <li>Full truckloads are much less encumbered by size and weight restrictions.</li>
+              <li>FTL shipments get to the destination sooner, as the truck is making no other pickups or
+                drop-offs along the way.
+              </li>
+              <li>FTL transport means less handling, the shipment is less likely to get lost or damaged.
+              </li>
+            </ul>
+            <span class="card-title card-title_img1">FULL TRUCK LOAD</span>
+          </article>
+          <article class="custom-article">
+            <p class="article-text">
+              Kavkaz Express LLC is happy to provide drop and hook services. We can arrange for specific
+              trailer models according to city, region, or state, depending on the nature of the cargo
+              being transported, and choose the most qualified driver or company to provide the
+              service.</p>
+            <span class="card-title card-title_img3">HOOK AND DROP</span>
+          </article>
+          <article class="custom-article">
+            <p class="article-text">
+              A satellite vehicle tracking system is the ultimate solution for managing your LOADS
+              wherever they go. We offer detailed reporting and real-time GPS updates for every load we
+              haul. With accurate truck statuses, you can manage and improve your business.</p>
+            <span class="card-title card-title_img4">SATELLITE TRACKING</span>
+          </article>
+          <article class="custom-article">
+            <p class="article-text">
+              Whether you need space or an entire solution, Kavkaz Express makes warehousing easy!
+              Frozen, refrigerated, dry – we do it all. We provide services from cross-docking skids to
+              long term storage. Our Warehousing Solutions improve inventory efficiency and accelerate
+              your response to changing customer demand.</p>
+            <span class="card-title card-title_img5">WAREHOUSING</span>
+          </article>
+          <article class="custom-article">
+            <p class="article-text">
+              Kavkaz Express offers the most complete suite of expedited freight and trucking
+              transportation solutions to efficiently move your goods across the country. Our expedited
+              freight team service specializes in time sensitive solutions, and expedited delivery. We’re
+              able to deliver your goods faster, which translates into more safety and security for your
+              high value loads. </p>
+            <span class="card-title card-title_img3">TEAM EXPEDITED</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h3 class="brokers-title py-2 mt-0">SEE WHAT BROKERS SAY ABOUT US</h3>
+    <div class="col container">
+      <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="slideConfig"
+                          (init)="slickInit($event)"
+                          (breakpoint)="breakpoint($event)"
+                          (afterChange)="afterChange($event)"
+                          (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem class="slide">
+          <div class="container mx-auto my-4">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="rating justify-content-start align-items-start">
+                  <div class="card p-1 border-0 bg-transparent mb-0 shadow-none">
+                    <figure class="rating_wrapper d-flex">
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1"></i>
+                    </figure>
+                    <time class="rating_data">Dec 19.08.2022</time>
+                  </div>
+                </div>
+                <hr>
+                <div class="user-rating d-flex align-items-center">
+                  <figure style="width: 50px;height: 50px;background-color: lightgray;"
+                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">
+                    <img src="" alt="">
+                    <i class="mdi mdi-account mdi-36px"></i>
+                  </figure>
+                  <div class="ms-2">
+                    <h4 class="user_name">User Name</h4>
+                    <h5 class="user_work_place">Where are from ?</h5>
+                  </div>
+                </div>
+                <hr>
+                <div class="comment-area-box">
+                  <div class="w-75">
+                    <div class="d-flex align-items-center">
+                      <h4>Company: </h4>
+                      <span class="ms-2">Company Name</span>
+                    </div>
+                    <div class="d-flex">
+                      <i class="mdi mdi-check-bold"></i>
+                      <p class="ms-2">Yes I Recommend this company</p>
+                    </div>
+                  </div>
+                  <div class="w-25">
+
+                  </div>
+                </div>
+              </div>
+              <div class="card col-md-4 ms-auto px-0 bg-transparent">
+                <div class="card-header"><h4 class="rating_title text-center">Some Title</h4></div>
+                <div class=" card-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi beatae dolore eos libero, nihil
+                    pariatur provident quia saepe veritatis voluptate. Aut consequuntur cum dolorem, doloribus eaque
+                    magnam minima modi praesentium, qui quidem recusandae soluta ut voluptas. Ad adipisci, aliquam,
+                    beatae
+                    corporis, dolore laudantium nobis omnis praesentium quaerat quis repellat rerum!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ngxSlickItem class="slide">
+          <div class="container mx-auto my-4">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="rating justify-content-start align-items-start">
+                  <div class="card p-1 border-0 bg-transparent mb-0 shadow-none">
+                    <figure class="rating_wrapper d-flex">
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1"></i>
+                    </figure>
+                    <time class="rating_data">Dec 19.08.2022</time>
+                  </div>
+                </div>
+                <hr>
+                <div class="user-rating d-flex align-items-center">
+                  <figure style="width: 50px;height: 50px;background-color: lightgray;"
+                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">
+                    <i class="mdi mdi-account mdi-36px"></i>
+                  </figure>
+                  <div class="ms-2">
+                    <h4 class="user_name">User Name</h4>
+                    <h5 class="user_work_place">Where are from ?</h5>
+                  </div>
+                </div>
+                <hr>
+                <div class="comment-area-box">
+                  <div class="w-75">
+                    <div class="d-flex align-items-center">
+                      <h4>Company: </h4>
+                      <span class="ms-2">Company Name</span>
+                    </div>
+                    <div class="d-flex">
+                      <i class="mdi mdi-check-bold"></i>
+                      <p class="ms-2">Yes I Recommend this company</p>
+                    </div>
+                  </div>
+                  <div class="w-25">
+
+                  </div>
+                </div>
+              </div>
+              <div class="card col-md-4 ms-auto px-0 bg-transparent">
+                <div class="card-header"><h4 class="rating_title text-center">Some Title</h4></div>
+                <div class=" card-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi beatae dolore eos libero, nihil
+                    pariatur provident quia saepe veritatis voluptate. Aut consequuntur cum dolorem, doloribus eaque
+                    magnam minima modi praesentium, qui quidem recusandae soluta ut voluptas. Ad adipisci, aliquam,
+                    beatae
+                    corporis, dolore laudantium nobis omnis praesentium quaerat quis repellat rerum!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ngxSlickItem class="slide">
+          <div class="container mx-auto my-4">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="rating justify-content-start align-items-start">
+                  <div class="card p-1 border-0 bg-transparent mb-0 shadow-none">
+                    <figure class="rating_wrapper d-flex">
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1" style="color: gold"></i>
+                      <i class="mdi mdi-star me-1"></i>
+                    </figure>
+                    <time class="rating_data">Dec 19.08.2022</time>
+                  </div>
+                </div>
+                <hr>
+                <div class="user-rating d-flex align-items-center">
+                  <figure style="width: 50px;height: 50px;background-color: lightgray;"
+                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">
+                    <i class="mdi mdi-account mdi-36px"></i>
+                  </figure>
+                  <div class="ms-2">
+                    <h4 class="user_name">User Name</h4>
+                    <h5 class="user_work_place">Where are from ?</h5>
+                  </div>
+                </div>
+                <hr>
+                <div class="comment-area-box">
+                  <div class="w-75">
+                    <div class="d-flex align-items-center">
+                      <h4>Company: </h4>
+                      <span class="ms-2">Company Name</span>
+                    </div>
+                    <div class="d-flex">
+                      <i class="mdi mdi-check-bold"></i>
+                      <p class="ms-2">Yes I Recommend this company</p>
+                    </div>
+                  </div>
+                  <div class="w-25">
+
+                  </div>
+                </div>
+              </div>
+              <div class="card col-md-4 ms-auto px-0 bg-transparent">
+                <div class="card-header"><h4 class="rating_title text-center">Some Title</h4></div>
+                <div class=" card-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi beatae dolore eos libero, nihil
+                    pariatur provident quia saepe veritatis voluptate. Aut consequuntur cum dolorem, doloribus eaque
+                    magnam minima modi praesentium, qui quidem recusandae soluta ut voluptas. Ad adipisci, aliquam,
+                    beatae
+                    corporis, dolore laudantium nobis omnis praesentium quaerat quis repellat rerum!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+  </section>
+  <h2 style="background-color: lightgray;color: white"
+      class="section text-center py-2 m-0 sections-title container-fluid"
+      id="about">ABOUT
+    US</h2>
+  <hr class="my-0 custom-horizontal">
+  <section class="container">
+    <img src="assets/imgs/logo.svg" class="w-25 mx-auto d-flex my-5" style="min-width: 10rem" alt="">
+    <p class="card-body">
+      ABOUT US
+      Reefer, DryVan or Stepdeck we got you covered. Being a truck driver for 5 years himself the founder of
+      Kavkaz Express, LLC knows the business from inside out. With dedication, hard work and compassion he managed
+      to build a strong and trustworthy name.
+      <br>
+      <br>
+      Today <strong>Kavkaz Express LLC</strong> is recognized as a successful and fast-growing transportation
+      company that serves
+      customers within USA and Canada. Founded in 2012 with a single truck on the fleet, Kavkaz Express LLC has
+      expanded and became one of the leaders in the industry operating with 3 locations and multiple warehouses.
+      <br>
+      <br>
+      From day one <strong>Kavkaz Express LLC</strong> has prioritized the success of its partners and employees
+      and therefore, has
+      embraced one fundamental rule: treat others as you wish to be treated yourself. Core values and principles
+      of our company are based on this foundation.
+    </p>
+  </section>
+  <h3 style="color: black" class="text-center py-1 my-5 about_us_sections-subtitle">OUR CLIENTS</h3>
+  <figure class="container">
+    <div class="row d-flex align-items-center justify-content-center">
+      <img class="my-3 mx-md-3 img-fluid logo"
+           src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+           alt="">
+      <img class="my-3 mx-md-3 img-fluid logo"
+           src="assets/imgs/clients/landstar.svg"
+           alt="">
+      <img class="my-3 mx-md-3 img-fluid logo"
+           src="https://data.cbonds.com/organisations_logos/37003/1608802754JBHT_original.png"
+           alt="">
+      <img class="my-3 mx-md-3 img-fluid logo"
+           src="assets/imgs/clients/robinzon.svg"
+           alt="">
+    </div>
+  </figure>
+  <section>
+    <h2 class="work_with_us-title sections-title my-5">WHY WORK WITH US</h2>
+    <div class="work_with_us-articles_grid">
+      <article class="d-flex article_scale-animation">
+        <img class="img-circle m-0" src="assets/imgs/work-with-us/operator.webp" alt="">
+        <div class="text-wrapper ms-md-2">
+          <h4 class="">Operations</h4>
+          <p>We provide 24/7 support for our clients and drivers along with real time location service for
+            all loads. Transparent dispatching with rate confirmations on every load – we have nothing
+            to hide, Owner Operator gets paid percentage from full gross pay</p>
+        </div>
+      </article>
+      <article class="d-flex article_scale-animation">
+        <img class="img-circle m-0" src="assets/imgs/work-with-us/safety.webp" alt="">
+        <div class="text-wrapper ms-md-2">
+          <h4 class="">SAFETY</h4>
+          <p>Full safety team: compliance tracking, paperwork reviews and preparations, on the road
+            support. Ticket and violation removal support. DOT violation challenges by experienced
+            staff. Usage of company’s IFTA stickers and legal reporting.</p>
+        </div>
+      </article>
+      <article class="d-flex article_scale-animation">
+        <img class="img-circle m-0" src="assets/imgs/work-with-us/maintenance.webp" alt="">
+        <div class="text-wrapper ms-md-2">
+          <h4 class="">MAINTENANCE</h4>
+          <p>With our maintenance support team drivers can be sure that all equipment is on time
+            maintained and any breakdown can be solved without delay. Our outstanding communication
+            always leave our clients satisfied with on time delivery.</p>
+        </div>
+      </article>
+      <article class="d-flex article_scale-animation">
+        <img class="img-circle m-0" src="assets/imgs/work-with-us/employees.webp" alt="">
+        <div class="text-wrapper ms-md-2">
+          <h4 class="">WE TREAT OUR EMPLOYEES AS FAMILY</h4>
+          <p>We keep our business as clear as possible, that's why we share Rate Confirmations with our
+            Owner Operators!</p>
+          <ul>
+            <li>No forced dispatch.</li>
+            <li>No touch freight.</li>
+            <li>Owner/Ops get 88% pay from GROSS.</li>
+            <li>All our dispatchers speak Russian as well.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <button class="btn btn-outline-primary btn-lg my-3 d-flex" style="margin: 0 auto;" (click)="applyNow()">APPLY NOW
+    </button>
+  </section>
+  <h2 id="contacts" style="background-color: lightgray;color: white" class="section text-center py-2 m-0 sections-title">
+    CONTACT US</h2>
+  <hr class="my-0 custom-horizontal">
+  <section class="container my-5">
+    <div class="row">
+      <div class="col d-flex footer_address" style="text-align: center;display: flex;flex-direction: column">
+        <h3>
+          SET IN TOUCH
+        </h3>
+        <span class="my-3 font-20">General contact info</span>
+        <a class="footer_links font-20"
+           href="tel:+1(303)532-5955">+1(303)532-5955</a>
+        <a class="footer_links font-20"
+           href="tel:+1(224)201-1229">+1(224)201-1229</a>
+        <a class="footer_links mb-3 font-20"
+           href="mailto: dispatch@KavkazExpress.com">dispatch@KavkazExpress.com</a>
+        <h3 class=" font-20">
+          OUR LOCATIONS
+        </h3>
+        <span class="my-3 font-20">DENVER, CO OFFICE</span>
+        <p class=" font-20">WHEELING, IL OFFICE
+          <br>
+          <span class=" font-20">1400 S Wolf Rd</span>
+          <br>
+          <span class=" font-20">Wheeling IL 60090</span>
+          <br>
+          <span class=" font-20">Building 200 Suite 209</span>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="position-fixed" style="bottom: 1rem;right: 1rem">
+  <button class="btn-outline-danger btn d-flex align-items-center text-center justify-content-center custom-message-button"
+          (click)="toggleMessagePopup()" type="button"><i class="mdi mdi-24px mdi-message-text me-2"></i><span>SEND US A MESSAGE</span>
+  </button>
+</div>
+<!--<div class="position-fixed" style="bottom: 5rem;right: 1rem">-->
+<!--  <button class="btn-outline-success btn d-flex align-items-center text-center justify-content-center" (click)="toggleRatingPopup()"  type="button"><i class="mdi mdi-24px mdi-message-text me-2"></i>ADD RATING</button>-->
+<!--</div>-->
+<!--<section class="card message_popup mx-auto">-->
+<!--  <h4 class="card-header">SEND US A MESSAGE</h4>-->
+<!--  <div class="card-body" >-->
+<!--    <form >-->
+<!--      <div class="form-group mb-3">-->
+<!--        <label >First Name</label>-->
+<!--        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="First Name">-->
+<!--      </div>-->
+<!--      <div class="form-group mb-3">-->
+<!--        <label >Last Name</label>-->
+<!--        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Last Name">-->
+<!--      </div>-->
+<!--      <div class="form-group mb-3">-->
+<!--        <label >Email address</label>-->
+<!--        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">-->
+<!--      </div>-->
+<!--      <div class="form-group mb-3">-->
+<!--        <label >Phone number</label>-->
+<!--        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number">-->
+<!--      </div>-->
+
+<!--      <div class="form-group mb-3">-->
+<!--        <label >Message</label>-->
+<!--        <textarea class="form-control" style="min-height: 10rem"></textarea>-->
+<!--      </div>-->
+<!--      <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</section>-->
+
+<div class="container">
+  <div class="row">
+    <div class="custom_popup" *ngIf="toggleMessage">
+      <form class="card mt-3" action="">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h2>FORM</h2>
+          <i class="mdi mdi-close mdi-24px" style="color: red;cursor: pointer" (click)="toggleMessagePopup()"></i>
+        </div>
+        <div class="card-body">
+          <div>
+            <label class="form-label" for="username">Full Name</label>
+            <input class="form-control" id="username" type="text" placeholder="Full Name">
+          </div>
+          <div>
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" id="email" type="text" placeholder="email">
+          </div>
+          <div>
+            <label class="form-label" for="pone">Phone</label>
+            <input class="form-control" id="pone" type="text" placeholder="phone">
+          </div>
+          <div>
+            <label for="textArea">Write To Us</label>
+            <textarea style="min-height: 200px" id="textArea" class="form-control" placeholder="Write To Us"></textarea>
+          </div>
+          <button class="btn btn-outline-primary mt-3" (click)="toggleMessagePopup()">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="custom_popup" *ngIf="toggleRating">
+  <app-rating></app-rating>
+</div>

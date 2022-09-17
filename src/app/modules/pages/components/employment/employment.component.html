@@ -1,0 +1,238 @@
+<section class="container-xxl px-0">
+  <div class="row">
+    <div class="container" style="margin-top: 10rem;">
+      <h1 class="text-center fs-1">CALL 224-201-1229, 303-532-5955, 720-722-6606
+        <br>
+        <span>OR FILL OUT FORM</span></h1>
+    </div>
+  </div>
+  <hr class="custom-horizontal">
+  <div class="container">
+    <section>
+      <form [formGroup]="employmentForm" (ngSubmit)="submit()" class="row justify-content-between" action="">
+        <div class="col-md-6">
+          <h2 class="my-4">Main Info</h2>
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name<span>*</span></label>
+            <input type="text" class="form-control" id="fullName" placeholder="First and Last Name" formControlName="fullName">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number<span>*</span></label>
+            <input type="tel" class="form-control" id="phone" formControlName="phone">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address<span>*</span></label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+          </div>
+          <div class="mb-3 col-md-3">
+            <label for="experience" class="form-label">Years of Experience</label>
+            <input type="number" class="form-control" id="experience" formControlName="experience">
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="noExperience" formControlName="noExperience">
+            <label class="form-check-label" for="noExperience">
+              No Experience
+            </label>
+          </div>
+          <label for="position">Position</label>
+          <select formControlName="position" name="Position" id="position" class="form-select mb-3">
+            <option value="Owner Operator">Owner Operator</option>
+            <option value="Driver">Driver</option>
+            <option value="Dispatcher">Dispatcher</option>
+          </select>
+          <div class="col-md-3 mb-3" data-provide="datepicker">
+            <label class="form-label" for="dateOfBirth">Date of Birth<span>*</span></label>
+            <input id="dateOfBirth" type="date" class="form-control" formControlName="dateOfBirth">
+          </div>
+          <div>
+            <h2 class="my-4">Current Address</h2>
+            <div class="mb-3">
+              <label class="form-label" for="street">Street Address<span>*</span></label>
+              <input id="street" type="text" class="form-control" formControlName="street">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="streetLine">Street Address Line 2<span>*</span></label>
+              <input id="streetLine" type="text" class="form-control" formControlName="streetLine">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="city">City<span>*</span></label>
+              <input id="city" type="text" class="form-control" formControlName="city">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="region">State<span>*</span></label>
+              <input id="region" type="text" class="form-control" formControlName="region">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="zip">Zip Code<span>*</span></label>
+              <input id="zip" type="text" class="form-control" formControlName="zip">
+            </div>
+          </div>
+          <p class="my-4">If at the above residence less than 3 years, list below all residences for the past 3 years.</p>
+          <div>
+            <h2 class="my-4">Previous Address</h2>
+            <div class="mb-3">
+              <label class="form-label" for="streetPrev">Street Address</label>
+              <input id="streetPrev" type="text" class="form-control" formControlName="streetPrev">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="streetLinePrev">Street Address Line 2</label>
+              <input id="streetLinePrev" type="text" class="form-control" formControlName="streetLinePrev">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="cityPrev">City</label>
+              <input id="cityPrev" type="text" class="form-control" formControlName="cityPrev">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="statePrev">State</label>
+              <input id="statePrev" type="text" class="form-control" formControlName="statePrev">
+            </div>
+            <div>
+              <label class="form-label" for="zipPrev">Zip Code</label>
+              <input id="zipPrev" type="text" class="form-control" formControlName="zipPrev">
+            </div>
+          </div>
+          <div class="mb-3">
+            <h2 class="my-4">Social Security №<span>*</span></h2>
+            <input id="socialSecurity" type="text" class="form-control" formControlName="socialSecurity">
+          </div>
+        </div>
+        <div class="col-md-5">
+          <h2 class="my-4">In Case Of Emergency Notify: </h2>
+          <div class="row mb-3">
+            <div class="col-6">
+              <label class="form-label" for="emergencyFirstName">First Name<span>*</span></label>
+              <input id="emergencyFirstName" type="text" class="form-control" formControlName="emergencyFirstName">
+            </div>
+            <div class="col-6">
+              <label class="form-label" for="emergencyLN">Last Name<span>*</span></label>
+              <input id="emergencyLN" type="text" class="form-control" formControlName="emergencyLastName">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="emergencyPN">Phone Number<span>*</span></label>
+            <input id="emergencyPN" type="tel" class="form-control" formControlName="emergencyPhone">
+          </div>
+          <h2 class="my-4">Add Information</h2>
+          <div class="mb-3">
+            <p>Have you ever applied with this company before?<span>*</span></p>
+            <div class="form-check">
+              <input value="yes" class="form-check-input" type="radio" id="yes1" name="applied" formControlName="applied">
+              <label class="form-check-label" for="yes1">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <input value="no" class="form-check-input" type="radio" id="no1" name="applied" formControlName="applied">
+              <label class="form-check-label" for="no1">
+                No
+              </label>
+            </div>
+          </div>
+          <div id="work" class="mb-3">
+            <p>Have you ever worked for this company under another name?<span>*</span></p>
+            <div class="form-check">
+              <input value="yes" class="form-check-input" type="radio" id="yes2" name="work" formControlName="work">
+              <label class="form-check-label" for="yes2">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <input value="no" class="form-check-input" type="radio" id="no2" name="work" formControlName="work">
+              <label class="form-check-label" for="no2">
+                No
+              </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="anotherName">If yes, Name?</label>
+            <input id="anotherName" type="text" class="form-control" formControlName="anotherName">
+
+            <p class="mt-3">Are you currently employed?<span>*</span></p>
+            <div class="form-check">
+              <input value="yes" class="form-check-input" type="radio" id="prevEmployment" name="prevEmployment" formControlName="prevEmployment">
+              <label class="form-check-label" for="prevEmployment">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <input value="no" class="form-check-input" type="radio" id="prevEmploymentNo" name="prevEmployment" formControlName="prevEmployment">
+              <label class="form-check-label" for="prevEmploymentNo">
+                No
+              </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="prevEmploymentName">If yes, Name?</label>
+            <input id="prevEmploymentName" type="text" class="form-control" formControlName="prevEmploymentName">
+          </div>
+          <label class="form-label" for="startWork">Date you are available to start work?<span>*</span></label>
+          <div class="col-md-3 mb-3" data-provide="datepicker">
+            <input id="startWork" type="date" class="form-control" formControlName="startWork">
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="lastFive">List states operated in last 5 years</label>
+            <input id="lastFive" type="text" class="form-control" formControlName="states">
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="safeDrive">List safe driving awards and who presented by</label>
+            <input id="safeDrive" type="text" class="form-control" formControlName="safeDrive">
+          </div>
+          <div  class="mb-3">
+            <p>Have you ever been convicted of a crime?<span>*</span></p>
+            <div class="form-check">
+              <input value="yes" class="form-check-input" type="radio" name="crime" id="yes3" formControlName="crime">
+              <label class="form-check-label" for="yes3">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <input value="no" class="form-check-input" type="radio" name="crime" id="no3" formControlName="crime">
+              <label class="form-check-label" for="no3">
+                No
+              </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="explain">If yes, please explain:</label>
+            <textarea id="explain" class="form-control bi-textarea-resize" [formControlName]="'explain'"></textarea>
+            <small>
+              (A conviction does not automatically bar you from employment) <br> (Attach a separate sheet of paper if
+              necessary)</small>
+          </div>
+          <div class="mb-3">
+            <p>Are there any pending charges against you?<span>*</span></p>
+            <div class="form-check">
+              <input value="yes" class="form-check-input" type="radio" name="pendingCharges" id="yes4" formControlName="pendingCharges">
+              <label class="form-check-label" for="yes4">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <input value="no" class="form-check-input" type="radio" name="pendingCharges" id="no4" formControlName="pendingCharges">
+              <label class="form-check-label" for="no4">
+                No
+              </label>
+            </div>
+          </div>
+          <label class="form-label" for="highest">EDUCATION. Highest grade completed</label>
+          <div class="mb-3 col-2">
+            <input id="highest" formControlName="highest" type="number" class="form-control" placeholder="ex:11">
+          </div>
+          <label class="form-label" for="college">College:</label>
+          <div class="mb-3 col-2">
+            <input id="college" type="number" class="form-control" placeholder="ex:5" formControlName="college">
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="school">Last school/courses attended</label>
+            <input id="school" type="text" class="form-control" formControlName="school">
+          </div>
+          <div class="col-md-3 mb-3" data-provide="datepicker">
+            <label class="form-label" for="signedDate">Date Signed<span>*</span></label>
+            <input id="signedDate" type="date" class="form-control" formControlName="signed">
+          </div>
+        </div>
+        <button class="btn btn-outline-primary btn-lg mt-5 mb-5" type="submit">SUBMIT</button>
+      </form>
+    </section>
+  </div>
+</section>
