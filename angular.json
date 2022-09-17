@@ -112,6 +112,16 @@
               "node_modules/slick-carousel/slick/slick.min.js"
             ]
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "land-offire:build:production",
+            "firebaseProject": "landofffire",
+            "firebaseHostingSite": "landofffire"
+          }
         }
       }
     }

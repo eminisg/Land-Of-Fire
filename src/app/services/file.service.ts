@@ -12,6 +12,5 @@ export class FileService implements OnInit{
   }
 
   getImg(){
-   return this.http.get('gs://landofffire.appspot.com/star.svg');
   }
 }

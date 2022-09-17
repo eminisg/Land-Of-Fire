@@ -74,8 +74,6 @@ export class HomeComponent implements OnInit {
   }
 
   getImg(){
-    this.fileService.getImg().subscribe(res=>{
-      console.log(res);
-    })
+
   }
 }

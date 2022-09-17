@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "landofffire"
+  },
+  "targets": {
+    "landofffire": {
+      "hosting": {
+        "land-offire": [
+          "landofffire"
+        ]
+      }
+    }
   }
 }
