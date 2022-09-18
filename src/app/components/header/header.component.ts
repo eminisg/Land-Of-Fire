@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
-import {NavigationEnd, NavigationStart, Router} from "@angular/router";
+import {ActivatedRoute, NavigationEnd, NavigationStart, Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',

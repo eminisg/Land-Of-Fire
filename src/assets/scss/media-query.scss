@@ -66,7 +66,7 @@
   }
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1000px) {
   .px-lg-5 {
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -101,6 +101,10 @@
     width: 100%;
     align-items: center;
     justify-content: space-around;
+  }
+
+  .custom_star {
+    font-size: 3rem !important;
   }
 }
 
@@ -184,5 +188,9 @@
   }
   .article-text {
     font-size: 0.7rem !important;
+  }
+
+  .custom_star {
+    font-size: 2rem !important;
   }
 }

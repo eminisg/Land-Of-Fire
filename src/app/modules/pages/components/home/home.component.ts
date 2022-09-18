@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
   slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
     arrows:0,
   };
 

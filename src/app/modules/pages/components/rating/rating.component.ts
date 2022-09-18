@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {FileService} from "../../../../services/file.service";
+import {UtilService} from "../../services/util.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-rating',
@@ -14,24 +16,45 @@ export class RatingComponent implements OnInit {
   path?: any
   fileList!: FileList
 
-  constructor(private fb: FormBuilder,private fileService:FileService) {
+  constructor(private fb: FormBuilder, private fileService: FileService, private util: UtilService, private activeRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.initializeForm()
+    this.removeHeader();
+    this.initializeForm();
+    this.ratingAction();
   }
 
   initializeForm() {
     this.form = this.fb.group({
       image: [null, []],
-      id:[null,[]],
-      date:[''],
+      grade: [null, []],
+      username: [null, []],
+      companyName: [null, []],
+      title: [null, []],
+      description: [null, []],
+      address: [null, []],
+      id: [null, []],
+      date: [''],
+    })
+  }
+
+  removeHeader() {
+    this.activeRoute.url.subscribe(res => {
+      if (res[0].path === 'reviews') {
+        const header = document.getElementById('header') as HTMLElement;
+        header.style.display = 'none';
+        window.scrollTo({top: 0, behavior: 'auto'});
+      }
     })
   }
 
   submit() {
     this.addData();
-    this.fileService.postImg(this.form.value,this.form.value.id);
+    console.log(this.form.value);
+    this.fileService.postImg(this.form.value, this.form.value.id);
+    this.util.postQuoteData(this.form.value.id, this.form.value);
+
   }
 
   preview(event: any) {
@@ -53,6 +76,25 @@ export class RatingComponent implements OnInit {
   addData() {
     let today = new Date();
     this.form.value.id = (new Date().getTime()).toString();
-    this.form.value.date = today.getFullYear() + '-' + (today.getMonth()+1) + '-' +  today.getDate() + ' / '+ (today.getHours()) + ':' + (today.getMinutes()) + ':' + (today.getSeconds());
+    this.form.value.date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ' / ' + (today.getHours()) + ':' + (today.getMinutes()) + ':' + (today.getSeconds());
+  }
+
+  ratingAction() {
+    const stars = Array.from(document.getElementsByClassName('mdi-star'))as any
+    stars.forEach((star:any,i:number) => star.addEventListener('click',(action:any)=>{
+      let current_star_level1 = i + 1
+
+      stars.forEach((star:any,j:number)=>{
+        if(current_star_level1 >= j+1){
+        star.classList.add('star_active')
+        } else {
+          star.classList.remove('star_active')
+        }
+      });
+      const review = Array.from(document.getElementsByClassName('star_active'));
+      console.log(review.length)
+      this.form.get('grade')?.setValue(review.length);
+    }));
+
   }
 }
