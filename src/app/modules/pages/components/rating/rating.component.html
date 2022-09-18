@@ -1,16 +1,19 @@
-<!--<section class="card" style="z-index: 999;">-->
-<!--  <h2 class="card-header">RATING FORM</h2>-->
-<!--  <div class="card-body">-->
-<!--    <div class="col-12 mt-5 pt-5">-->
-<!--      <form [formGroup]="form" (submit)="submit()">-->
-<!--        <div class="form-group">-->
-<!--          <label for="imageInput">Password</label>-->
-<!--          <input accept="*.png.jpg*" type="file" (change)="upload($event)" class="form-control" id="imageInput" alt="" formControlName="image">-->
-<!--        </div>-->
-<!--        <button type="button" class="btn-outline-secondary btn">SUBMIT</button>-->
-<!--        <button type="button" (click)="getImg()" class="btn-outline-primary btn">SUBMIT</button>-->
-<!--      </form>-->
-<!--      <img src="" alt="">-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
+<section class="card" style="z-index: 999;">
+  <h2 class="card-header">RATING FORM</h2>
+  <div class="card-body">
+    <div class="col-6 flex-column mt-5 pt-5">
+      <form [formGroup]="form" (submit)="submit()">
+
+        <div class="mb-3 col-md-6 col-sm-12">
+          <label for="image" class="form-label">Add Image</label>
+          <input id="image" class="form-control" accept="*.png.jpg.jpeg" (change)="preview($event)"
+                 type="file">
+          <button type="button" (click)="clearImage()" class="btn btn-primary mt-3">Clear</button>
+        </div>
+        <img alt="" id="frame" src="" class="img-fluid w-50 mb-3"/>
+        <button type="submit" class="btn btn-outline-secondary">SUBMIT</button>
+      </form>
+      <img src="" alt="">
+    </div>
+  </div>
+</section>

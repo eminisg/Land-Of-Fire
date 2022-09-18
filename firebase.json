@@ -4,6 +4,7 @@
   },
   "hosting": [
     {
+      "target": "land-offire",
       "public": "dist/land-offire",
       "ignore": [
         "firebase.json",
@@ -18,7 +19,6 @@
       ]
     },
     {
-      "target": "land-offire",
       "public": "dist/land-offire",
       "ignore": [
         "**/.*"

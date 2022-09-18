@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
 import {QuoteInterface} from "../../../interfaces/quote.interface";
+import {DatabaseModule, Database, getDatabase, ref, set} from "@angular/fire/database";
+import {FirebaseApp} from "@angular/fire/app";
 
 
 @Injectable({
@@ -7,21 +9,13 @@ import {QuoteInterface} from "../../../interfaces/quote.interface";
 })
 export class UtilService {
 
-  constructor() {
+  constructor(private afApp:FirebaseApp,private data:Database,private dataBase:DatabaseModule) {
   }
 
-  // postQuoteData(id: string, data: QuoteInterface) {
-  //   console.log('id and data', id, data)
-  //   const db = getDatabase();
-  //   return set(ref(db, 'quotes/' + id), data);
-  // }
-
-//   const db = getDatabase();
-//   set(ref(db, 'users/' + userId), {
-//   username: name,
-//   email: email,
-//   profile_picture : imageUrl
-// });
+  postQuoteData(id: string, data: QuoteInterface) {
+    const db = getDatabase();
+   return set(ref(db, 'users/' + id), data);
+  }
 
   // postEmploymentData(id: string, data: QuoteInterface) {
   //   const db = getDatabase();

@@ -38,7 +38,7 @@ export class QuoteComponent implements OnInit {
 
   submitQuote(postQuoteData: any) {
     this.addData();
-    // this.util.postQuoteData(this.quoteForm.value.id , postQuoteData)
+    // this.util.postQuoteData(this.quoteForm.value.id , postQuoteData);
   }
 
 

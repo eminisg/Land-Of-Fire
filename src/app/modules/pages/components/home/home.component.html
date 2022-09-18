@@ -1,10 +1,10 @@
 <div class="px-0">
-  <section class="row position-relative custom-title mx-0 section" id="home">
+  <main class="row position-relative custom-title mx-0 section" id="home">
     <div class="container screen-adapt">
       <h1 class="page-title">Transportation Experts</h1>
       <button class="btn btn-outline-light btn-lg mt-4" (click)="toQuotes('quote')">REQUEST A QUOTE</button>
     </div>
-  </section>
+  </main>
   <section style="z-index: 10; background-color: dimgray;" class="section bottom hash-section" id="service">
     <div>
       <h2 style="background-color: black;color: white;" class="text-center py-2 mt-0 sections-title">OUR SERVICES</h2>
@@ -68,7 +68,10 @@
     </div>
   </section>
   <section>
-    <h3 class="brokers-title py-2 mt-0">SEE WHAT BROKERS SAY ABOUT US</h3>
+    <div class="text-end">
+      <h3 class="brokers-title py-2 mt-0">SEE WHAT BROKERS SAY ABOUT US</h3>
+      <a routerLink="/reviews">add comnet</a>
+    </div>
     <div class="col container">
       <ngx-slick-carousel class="carousel"
                           #slickModal="slick-carousel"
@@ -422,7 +425,7 @@
 <div class="container">
   <div class="row">
     <div class="custom_popup" *ngIf="toggleMessage">
-      <form class="card mt-3" action="">
+      <form class="card mt-3" [formGroup]="form" (ngSubmit)="submitForm()">
         <div class="card-header d-flex justify-content-between align-items-center">
           <h2>FORM</h2>
           <i class="mdi mdi-close mdi-24px" style="color: red;cursor: pointer" (click)="toggleMessagePopup()"></i>
@@ -430,21 +433,21 @@
         <div class="card-body">
           <div>
             <label class="form-label" for="username">Full Name</label>
-            <input class="form-control" id="username" type="text" placeholder="Full Name">
+            <input class="form-control" id="username" type="text" placeholder="Full Name" formControlName="username">
           </div>
           <div>
             <label class="form-label" for="email">Email</label>
-            <input class="form-control" id="email" type="text" placeholder="email">
+            <input class="form-control" id="email" type="text" placeholder="email" formControlName="email">
           </div>
           <div>
             <label class="form-label" for="pone">Phone</label>
-            <input class="form-control" id="pone" type="text" placeholder="phone">
+            <input class="form-control" id="pone" type="text" placeholder="phone" formControlName="phone">
           </div>
           <div>
             <label for="textArea">Write To Us</label>
-            <textarea style="min-height: 200px" id="textArea" class="form-control" placeholder="Write To Us"></textarea>
+            <textarea style="min-height: 200px" id="textArea" class="form-control" placeholder="Write To Us" formControlName="text"></textarea>
           </div>
-          <button class="btn btn-outline-primary mt-3" (click)="toggleMessagePopup()">SUBMIT</button>
+          <button class="btn btn-outline-primary mt-3" type="submit">SUBMIT</button>
         </div>
       </form>
     </div>
