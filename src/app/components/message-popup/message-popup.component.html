@@ -1,0 +1,30 @@
+<section class="popup-wrapper">
+  <form class="card mt-3" [formGroup]="form" (ngSubmit)="submitForm()">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h2>FORM</h2>
+      <button class="border-0 bg-transparent">
+        <i class="mdi mdi-close mdi-24px" style="color: red;cursor: pointer" (click)="closePopup()"></i>
+      </button>
+    </div>
+    <div class="card-body">
+      <div class="mb-2">
+        <label class="form-label" for="username">Full Name</label>
+        <input class="form-control" id="username" type="text" placeholder="Full Name" formControlName="username">
+      </div>
+      <div class="mb-2">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" id="email" type="text" placeholder="email" formControlName="email">
+      </div>
+      <div class="mb-2">
+        <label class="form-label" for="pone">Phone</label>
+        <input class="form-control" id="pone" type="text" placeholder="phone" formControlName="phone">
+      </div>
+      <div>
+        <label for="textArea">Write To Us</label>
+        <textarea style="min-height: 200px" id="textArea" class="form-control" placeholder="Write To Us"
+                  formControlName="text"></textarea>
+      </div>
+      <button class="btn btn-outline-primary mt-3" type="submit">SUBMIT</button>
+    </div>
+  </form>
+</section>

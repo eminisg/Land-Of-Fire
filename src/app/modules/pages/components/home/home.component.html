@@ -1,15 +1,15 @@
-<div class="px-0">
+<div class="px-0 mx-0 w-100 row">
   <main class="row position-relative custom-title mx-0 section" id="home">
-    <div class="container screen-adapt">
+    <div class="align-items-start d-flex justify-content-center flex-column ps-5">
       <h1 class="page-title">Transportation Experts</h1>
       <button class="btn btn-outline-light btn-lg mt-4" (click)="toQuotes('quote')">REQUEST A QUOTE</button>
     </div>
   </main>
-  <section style="z-index: 10; background-color: dimgray;" class="section bottom hash-section" id="service">
+  <section style="z-index: 10; background-color: dimgray;" class="section bottom hash-section px-0" id="service">
     <div>
       <h2 style="background-color: black;color: white;" class="text-center py-2 mt-0 sections-title">OUR SERVICES</h2>
       <hr class="my-2 custom-horizontal">
-      <div class="container-fluid custom-banner">
+      <div class="-fluid custom-banner">
         <div class="article-wrapper">
           <article class="custom-article">
             <p class="article-text">
@@ -33,7 +33,7 @@
           </article>
           <article class="custom-article">
             <p class="article-text">
-              Kavkaz Express LLC is happy to provide drop and hook services. We can arrange for specific
+              Land Of Fire LLC is happy to provide drop and hook services. We can arrange for specific
               trailer models according to city, region, or state, depending on the nature of the cargo
               being transported, and choose the most qualified driver or company to provide the
               service.</p>
@@ -48,7 +48,7 @@
           </article>
           <article class="custom-article">
             <p class="article-text">
-              Whether you need space or an entire solution, Kavkaz Express makes warehousing easy!
+              Whether you need space or an entire solution, Land Of Fire makes warehousing easy!
               Frozen, refrigerated, dry – we do it all. We provide services from cross-docking skids to
               long term storage. Our Warehousing Solutions improve inventory efficiency and accelerate
               your response to changing customer demand.</p>
@@ -56,7 +56,7 @@
           </article>
           <article class="custom-article">
             <p class="article-text">
-              Kavkaz Express offers the most complete suite of expedited freight and trucking
+              Land Of Fire offers the most complete suite of expedited freight and trucking
               transportation solutions to efficiently move your goods across the country. Our expedited
               freight team service specializes in time sensitive solutions, and expedited delivery. We’re
               able to deliver your goods faster, which translates into more safety and security for your
@@ -67,234 +67,116 @@
       </div>
     </div>
   </section>
-  <section>
-    <div class="text-end">
-      <h3 class="brokers-title py-2 mt-0">SEE WHAT BROKERS SAY ABOUT US</h3>
-      <a routerLink="/reviews">add comnet</a>
-    </div>
-    <div class="col container">
-      <ngx-slick-carousel class="carousel"
-                          #slickModal="slick-carousel"
-                          [config]="slideConfig"
-                          (init)="slickInit($event)"
-                          (breakpoint)="breakpoint($event)"
-                          (afterChange)="afterChange($event)"
-                          (beforeChange)="beforeChange($event)">
-        <div ngxSlickItem class="slide">
-          <div class="container mx-auto my-4">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="rating justify-content-start align-items-start">
-                  <div class="card p-1 border-0 bg-transparent mb-0 shadow-none">
-                    <figure class="rating_wrapper d-flex">
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1"></i>
-                    </figure>
-                    <time class="rating_data">Dec 19.08.2022</time>
-                  </div>
-                </div>
-                <hr>
-                <div class="user-rating d-flex align-items-center">
-                  <figure style="width: 50px;height: 50px;background-color: lightgray;"
-                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">
-                    <img src="" alt="">
-                    <i class="mdi mdi-account mdi-36px"></i>
-                  </figure>
-                  <div class="ms-2">
-                    <h4 class="user_name">User Name</h4>
-                    <h5 class="user_work_place">Where are from ?</h5>
-                  </div>
-                </div>
-                <hr>
-                <div class="comment-area-box">
-                  <div class="w-75">
-                    <div class="d-flex align-items-center">
-                      <h4>Company: </h4>
-                      <span class="ms-2">Company Name</span>
-                    </div>
-                    <div class="d-flex">
-                      <i class="mdi mdi-check-bold"></i>
-                      <p class="ms-2">Yes I Recommend this company</p>
-                    </div>
-                  </div>
-                  <div class="w-25">
+<!--  <section>-->
+<!--    <div class="text-end">-->
+<!--      <h3 class="brokers-title py-2 mt-0">SEE WHAT BROKERS SAY ABOUT US</h3>-->
+<!--      <a routerLink="/reviews">add comnet</a>-->
+<!--    </div>-->
+<!--    <div class="col ">-->
+<!--      <ngx-slick-carousel class="carousel"-->
+<!--                          #slickModal="slick-carousel"-->
+<!--                          [config]="slideConfig"-->
+<!--                          (init)="slickInit($event)"-->
+<!--                          (breakpoint)="breakpoint($event)"-->
+<!--                          (afterChange)="afterChange($event)"-->
+<!--                          (beforeChange)="beforeChange($event)">-->
+<!--        <div ngxSlickItem class="slide" *ngFor="let review of displayReviews; let i =index">-->
+<!--          <div class=" mx-auto my-4">-->
+<!--            <div class="row">-->
+<!--              <div class="col-md-6">-->
+<!--                <div class="rating justify-content-start align-items-start">-->
+<!--                  <div class="card p-1 border-0 bg-transparent mb-0 shadow-none">-->
+<!--                    <figure class="rating_wrapper d-flex">-->
+<!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 1?'gold':'darkgoldenrod'}"></i>-->
+<!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 2?'gold':'darkgoldenrod'}"></i>-->
+<!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 3?'gold':'darkgoldenrod'}"></i>-->
+<!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 4?'gold':'darkgoldenrod'}"></i>-->
+<!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 5?'gold':'darkgoldenrod'}"></i>-->
+<!--                    </figure>-->
+<!--                    <time class="rating_data">{{review?.date}}</time>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <hr>-->
+<!--                <div class="user-rating d-flex align-items-center">-->
+<!--                  <figure style="width: 50px;height: 50px;background-color: lightgray;"-->
+<!--                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">-->
+<!--                    <img [src]="review?.imgURL" alt="" style="width: 50px;height: 50px;" *ngIf="review?.imgURL">-->
+<!--                    <i class="mdi mdi-account mdi-36px" *ngIf="!review?.imgURL"></i>-->
+<!--                  </figure>-->
+<!--                  <div class="ms-2">-->
+<!--                    <h4 class="user_name">{{review?.username}}</h4>-->
+<!--                    <h5 class="user_work_place">{{review?.address}}</h5>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <hr>-->
+<!--                <div class="comment-area-box">-->
+<!--                  <div class="w-75">-->
+<!--                    <div class="d-flex align-items-center">-->
+<!--                      <h4>Company: </h4>-->
+<!--                      <span class="ms-2">{{review?.companyName}}</span>-->
+<!--                    </div>-->
+<!--                    <div class="d-flex">-->
+<!--                      <i class="mdi mdi-check-bold"></i>-->
+<!--                      <p class="ms-2">Yes I Recommend this company</p>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="w-25">-->
 
-                  </div>
-                </div>
-              </div>
-              <div class="card col-md-4 ms-auto px-0 bg-transparent">
-                <div class="card-header"><h4 class="rating_title text-center">Some Title</h4></div>
-                <div class=" card-body">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi beatae dolore eos libero, nihil
-                    pariatur provident quia saepe veritatis voluptate. Aut consequuntur cum dolorem, doloribus eaque
-                    magnam minima modi praesentium, qui quidem recusandae soluta ut voluptas. Ad adipisci, aliquam,
-                    beatae
-                    corporis, dolore laudantium nobis omnis praesentium quaerat quis repellat rerum!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div ngxSlickItem class="slide">
-          <div class="container mx-auto my-4">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="rating justify-content-start align-items-start">
-                  <div class="card p-1 border-0 bg-transparent mb-0 shadow-none">
-                    <figure class="rating_wrapper d-flex">
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1"></i>
-                    </figure>
-                    <time class="rating_data">Dec 19.08.2022</time>
-                  </div>
-                </div>
-                <hr>
-                <div class="user-rating d-flex align-items-center">
-                  <figure style="width: 50px;height: 50px;background-color: lightgray;"
-                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">
-                    <i class="mdi mdi-account mdi-36px"></i>
-                  </figure>
-                  <div class="ms-2">
-                    <h4 class="user_name">User Name</h4>
-                    <h5 class="user_work_place">Where are from ?</h5>
-                  </div>
-                </div>
-                <hr>
-                <div class="comment-area-box">
-                  <div class="w-75">
-                    <div class="d-flex align-items-center">
-                      <h4>Company: </h4>
-                      <span class="ms-2">Company Name</span>
-                    </div>
-                    <div class="d-flex">
-                      <i class="mdi mdi-check-bold"></i>
-                      <p class="ms-2">Yes I Recommend this company</p>
-                    </div>
-                  </div>
-                  <div class="w-25">
-
-                  </div>
-                </div>
-              </div>
-              <div class="card col-md-4 ms-auto px-0 bg-transparent">
-                <div class="card-header"><h4 class="rating_title text-center">Some Title</h4></div>
-                <div class=" card-body">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi beatae dolore eos libero, nihil
-                    pariatur provident quia saepe veritatis voluptate. Aut consequuntur cum dolorem, doloribus eaque
-                    magnam minima modi praesentium, qui quidem recusandae soluta ut voluptas. Ad adipisci, aliquam,
-                    beatae
-                    corporis, dolore laudantium nobis omnis praesentium quaerat quis repellat rerum!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div ngxSlickItem class="slide">
-          <div class="container mx-auto my-4">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="rating justify-content-start align-items-start">
-                  <div class="card p-1 border-0 bg-transparent mb-0 shadow-none">
-                    <figure class="rating_wrapper d-flex">
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1" style="color: gold"></i>
-                      <i class="mdi mdi-star me-1"></i>
-                    </figure>
-                    <time class="rating_data">Dec 19.08.2022</time>
-                  </div>
-                </div>
-                <hr>
-                <div class="user-rating d-flex align-items-center">
-                  <figure style="width: 50px;height: 50px;background-color: lightgray;"
-                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">
-                    <i class="mdi mdi-account mdi-36px"></i>
-                  </figure>
-                  <div class="ms-2">
-                    <h4 class="user_name">User Name</h4>
-                    <h5 class="user_work_place">Where are from ?</h5>
-                  </div>
-                </div>
-                <hr>
-                <div class="comment-area-box">
-                  <div class="w-75">
-                    <div class="d-flex align-items-center">
-                      <h4>Company: </h4>
-                      <span class="ms-2">Company Name</span>
-                    </div>
-                    <div class="d-flex">
-                      <i class="mdi mdi-check-bold"></i>
-                      <p class="ms-2">Yes I Recommend this company</p>
-                    </div>
-                  </div>
-                  <div class="w-25">
-
-                  </div>
-                </div>
-              </div>
-              <div class="card col-md-4 ms-auto px-0 bg-transparent">
-                <div class="card-header"><h4 class="rating_title text-center">Some Title</h4></div>
-                <div class=" card-body">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi beatae dolore eos libero, nihil
-                    pariatur provident quia saepe veritatis voluptate. Aut consequuntur cum dolorem, doloribus eaque
-                    magnam minima modi praesentium, qui quidem recusandae soluta ut voluptas. Ad adipisci, aliquam,
-                    beatae
-                    corporis, dolore laudantium nobis omnis praesentium quaerat quis repellat rerum!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ngx-slick-carousel>
-    </div>
-  </section>
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="card col-md-4 ms-auto px-0 bg-transparent">-->
+<!--                <div class="card-header"><h4 class="rating_title text-center">{{review?.title}}</h4></div>-->
+<!--                <div class=" card-body">-->
+<!--                  <p>{{review?.description}}</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </ngx-slick-carousel>-->
+<!--    </div>-->
+<!--  </section>-->
   <h2 style="background-color: lightgray;color: white"
-      class="section text-center py-2 m-0 sections-title container-fluid"
+      class="section text-center py-2 m-0 sections-title -fluid"
       id="about">ABOUT
     US</h2>
   <hr class="my-0 custom-horizontal">
-  <section class="container">
-    <img src="assets/imgs/logo.svg" class="w-25 mx-auto d-flex my-5" style="min-width: 10rem" alt="">
-    <p class="card-body">
+  <section class="container d-flex flex-column">
+    <img src="assets/imgs/logo.svg" class="w-25 mx-auto d-flex my-5" style="max-width: 10rem" alt="">
+    <p class="card-body mx-auto col-md-6">
       ABOUT US
       Reefer, DryVan or Stepdeck we got you covered. Being a truck driver for 5 years himself the founder of
-      Kavkaz Express, LLC knows the business from inside out. With dedication, hard work and compassion he managed
+      Land Of Fire, knows the business from inside out. With dedication, hard work and compassion he managed
       to build a strong and trustworthy name.
       <br>
       <br>
-      Today <strong>Kavkaz Express LLC</strong> is recognized as a successful and fast-growing transportation
+      Today <strong>Land Of Fire</strong> is recognized as a successful and fast-growing transportation
       company that serves
-      customers within USA and Canada. Founded in 2012 with a single truck on the fleet, Kavkaz Express LLC has
+      customers within USA and Canada. Founded in 2012 with a single truck on the fleet, Land Of Fire has
       expanded and became one of the leaders in the industry operating with 3 locations and multiple warehouses.
       <br>
       <br>
-      From day one <strong>Kavkaz Express LLC</strong> has prioritized the success of its partners and employees
+      From day one <strong>Land Of Fire</strong> has prioritized the success of its partners and employees
       and therefore, has
       embraced one fundamental rule: treat others as you wish to be treated yourself. Core values and principles
       of our company are based on this foundation.
     </p>
   </section>
   <h3 style="color: black" class="text-center py-1 my-5 about_us_sections-subtitle">OUR CLIENTS</h3>
-  <figure class="container">
+  <figure class="">
     <div class="row d-flex align-items-center justify-content-center">
       <img class="my-3 mx-md-3 img-fluid logo"
-           src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+           src="assets/imgs/clients/amazon.webp"
            alt="">
       <img class="my-3 mx-md-3 img-fluid logo"
-           src="assets/imgs/clients/landstar.svg"
+           src="assets/imgs/clients/landstar.webp"
            alt="">
       <img class="my-3 mx-md-3 img-fluid logo"
-           src="https://data.cbonds.com/organisations_logos/37003/1608802754JBHT_original.png"
+           src="assets/imgs/clients/jbhunt.webp"
            alt="">
       <img class="my-3 mx-md-3 img-fluid logo"
-           src="assets/imgs/clients/robinzon.svg"
+           src="assets/imgs/clients/robinzon.webp"
            alt="">
     </div>
   </figure>
@@ -346,12 +228,14 @@
     <button class="btn btn-outline-primary btn-lg my-3 d-flex" style="margin: 0 auto;" (click)="applyNow()">APPLY NOW
     </button>
   </section>
-  <h2 id="contacts" style="background-color: lightgray;color: white" class="section text-center py-2 m-0 sections-title">
+  <h2 id="contacts" style="background-color: lightgray;color: white"
+      class="section text-center py-2 m-0 sections-title">
     CONTACT US</h2>
   <hr class="my-0 custom-horizontal">
-  <section class="container my-5">
+  <section class=" my-5">
     <div class="row">
-      <div class="col-md-2 location mx-md-auto text-start d-flex footer_address" style="text-align: center;display: flex;flex-direction: column">
+      <div class="col-md-2 location mx-md-auto text-start d-flex footer_address"
+           style="text-align: center;display: flex;flex-direction: column">
         <h3 class="text-start">
           SET IN TOUCH
         </h3>
@@ -361,7 +245,7 @@
         <a class="footer_links mb-3 mx-0 font-20"
            href="tel:+1(929)489-2280">
           <i class="mdi mdi-phone me-2"></i>
-          +1(929)489-2280</a>
+          313 203 10 10</a>
         <a class="footer_links mx-0 mb-3 font-20"
            href="mailto: office@landoffirellc.com">
           <i class="mdi mdi-email-outline me-2"></i>
@@ -385,8 +269,9 @@
   </section>
 </div>
 <div class="position-fixed" style="bottom: 1rem;right: 1rem">
-  <button class="btn-outline-danger btn d-flex align-items-center text-center justify-content-center custom-message-button"
-          (click)="toggleMessagePopup()" type="button"><i class="mdi mdi-24px mdi-message-text me-2"></i><span>SEND US A MESSAGE</span>
+  <button (click)="toggleMessagePopup()"
+    class="btn-outline-danger btn d-flex align-items-center text-center justify-content-center custom-message-button"
+     type="button"><i class="mdi mdi-24px mdi-message-text me-2"></i><span>SEND US A MESSAGE</span>
   </button>
 </div>
 <!--<div class="position-fixed" style="bottom: 5rem;right: 1rem">-->
@@ -422,37 +307,6 @@
 <!--  </div>-->
 <!--</section>-->
 
-<div class="container">
-  <div class="row">
-    <div class="custom_popup" *ngIf="toggleMessage">
-      <form class="card mt-3" [formGroup]="form" (ngSubmit)="submitForm()">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <h2>FORM</h2>
-          <i class="mdi mdi-close mdi-24px" style="color: red;cursor: pointer" (click)="toggleMessagePopup()"></i>
-        </div>
-        <div class="card-body">
-          <div>
-            <label class="form-label" for="username">Full Name</label>
-            <input class="form-control" id="username" type="text" placeholder="Full Name" formControlName="username">
-          </div>
-          <div>
-            <label class="form-label" for="email">Email</label>
-            <input class="form-control" id="email" type="text" placeholder="email" formControlName="email">
-          </div>
-          <div>
-            <label class="form-label" for="pone">Phone</label>
-            <input class="form-control" id="pone" type="text" placeholder="phone" formControlName="phone">
-          </div>
-          <div>
-            <label for="textArea">Write To Us</label>
-            <textarea style="min-height: 200px" id="textArea" class="form-control" placeholder="Write To Us" formControlName="text"></textarea>
-          </div>
-          <button class="btn btn-outline-primary mt-3" type="submit">SUBMIT</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 
 
 <div class="custom_popup" *ngIf="toggleRating">

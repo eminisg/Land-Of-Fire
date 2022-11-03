@@ -47,12 +47,13 @@ h3 {
 }
 
 .custom-title {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../../assets/imgs/city.webp');
+  background: url('../../../../../assets/imgs/bg_images/road3.gif');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom center;
   background-size: cover;
   background-attachment: fixed;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .custom-banner {
@@ -71,7 +72,7 @@ h3 {
 }
 
 .custom-article {
-  background-color: dimgray;
+  background-color: rgb(0,0,0,0.2);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -80,7 +81,7 @@ h3 {
   align-items: center;
   border-radius: 2px;
   overflow: hidden;
-  border: 1px solid black;
+  border: rgb(0,0,0,0.8);
   padding: 2rem;
   transition: .5s transform ease-in;
   height: 304px;
@@ -147,7 +148,7 @@ h3 {
 }
 
 .card-title_img4 {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../../assets/imgs/settelite.webp');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../../../assets/imgs/settelite_new.webp');
 }
 
 .card-title_img5 {

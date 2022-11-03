@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     const navLink = Array.from(document.getElementsByClassName('nav-link'));
     let current = "";
 
-    if (localStorage.getItem('active_link') !== 'quote' && localStorage.getItem('active_link') !== 'employment') {
+    if (sessionStorage.getItem('active_link') !== 'quote' && sessionStorage.getItem('active_link') !== 'employment') {
       sections.forEach((section: any) => {
         const sectionTop = section.offsetTop;
         if (pageYOffset >= sectionTop - 86) {
@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       });
     }
 
-    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight && sessionStorage.getItem('active_link') !== ('employment' || 'quote')) {
       this.activeLink('contacts');
     }
   }
@@ -39,11 +39,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    if (localStorage.getItem('active_link') === null) {
-      localStorage.setItem('active_link', 'home');
-      this.navigateTo(<string>localStorage.getItem('active_link'))
+    if (sessionStorage.getItem('active_link') === null) {
+      sessionStorage.setItem('active_link', 'home');
+      this.navigateTo(<string>sessionStorage.getItem('active_link'))
     }
-    const section = localStorage.getItem('active_link');
+    const section = sessionStorage.getItem('active_link');
     this.navigateTo(<string>section)
   }
 
@@ -73,7 +73,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateTo(section: string) {
     this.toggleAction()
     window.removeEventListener('scroll', this.scrollSubscribe);
-    localStorage.setItem('active_link', section);
+    sessionStorage.setItem('active_link', section);
     if (section === 'home' || section === 'service' || section === 'about' || section === 'contacts') {
       if (section === 'home') {
         this.goTo('');
@@ -119,5 +119,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   toggleAction() {
     const toggle = document.getElementById('navbarSupportedContent') as any;
     toggle.classList.remove('show')
+  }
+
+  navigation() {
+    this.router.navigate(['/admin/rating-table'])
   }
 }

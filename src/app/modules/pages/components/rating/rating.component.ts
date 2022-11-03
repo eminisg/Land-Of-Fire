@@ -51,8 +51,9 @@ export class RatingComponent implements OnInit {
 
   submit() {
     this.addData();
-    console.log(this.form.value);
-    this.fileService.postImg(this.form.value, this.form.value.id);
+    if(this.form.value.image !== null) {
+      this.fileService.postImg(this.form.value, this.form.value.id);
+    }
     this.util.postQuoteData(this.form.value.id, this.form.value);
 
   }

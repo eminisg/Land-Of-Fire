@@ -14,28 +14,22 @@ import {getAuth, provideAuth} from "@angular/fire/auth";
 import {getDatabase, provideDatabase} from "@angular/fire/database";
 import {getFirestore, provideFirestore} from "@angular/fire/firestore";
 import {getStorage, provideStorage} from "@angular/fire/storage";
-
-const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'quote', component: QuoteComponent},
-  {path: 'employment', component: EmploymentComponent},
-  {path: 'reviews', component: RatingComponent},
-];
+import {PagesRoutingModule} from "./pages-routing.module";
 
 @NgModule({
   declarations: [
     HomeComponent,
     QuoteComponent,
     EmploymentComponent,
-    RatingComponent
+    RatingComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    PagesRoutingModule,
     SlickCarouselModule,
-    RouterModule.forChild(routes),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

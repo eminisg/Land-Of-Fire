@@ -1,0 +1,128 @@
+<div class="row position-relative">
+  <div class="col-lg-8 col-xl-8 w-100">
+    <div class="card">
+      <div class="card-body">
+
+        <div class="tab-content">
+          <div class="tab-pane show active" id="docs">
+            <div class="row">
+              <div class="col-lg-6 w-100">
+                <div class="card">
+                  <ul class="card-body nav nav-pills navtab-bg">
+                    <li>
+                      <button (click)="deleteAllSelected()" data-bs-toggle="tab" aria-expanded="true"
+                              class="btn btn-danger ms-2">
+                        Delete All Selected
+                      </button>
+                    </li>
+                    <li>
+                      <select class="form-select ms-2" style="cursor: pointer" #selectList (change)="changePageSize(selectList.value)">
+                        <option *ngFor="let item of pageOptions" [ngValue]="item">{{item}}</option>
+                      </select>
+                    </li>
+                  </ul>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered mb-0">
+                        <thead class="table-light">
+                        <tr class="table_header">
+                          <th style="width: 20px;">
+                            <div class="form-check font-16">
+                              <input (click)="checkAll()" class="form-check-input" type="checkbox" id="orderListCheck">
+                              <label class="form-check-label" for="orderlistCheck">&nbsp;</label>
+                            </div>
+                          </th>
+                          <th>ID</th>
+                          <th>Date</th>
+                          <th>Grade</th>
+                          <th>User Name</th>
+                          <th>Company</th>
+                          <th>Address</th>
+                          <th>Title</th>
+                          <th>Description</th>
+                          <th style="width: 125px;">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="employment_list_item"
+                            *ngFor="let review of comparedArray | slice : ((currentPage-1)*pageSize) : (currentPage*pageSize)">
+                          <td>
+                            <div class="form-check font-16">
+                              <input [value]="review.id" class="form-check-input" type="checkbox">
+                              <label class="form-check-label"></label>
+                            </div>
+                          </td>
+                          <td>{{review?.id}}</td>
+                          <td>{{review?.grade}}</td>
+                          <td>
+                            {{review?.username}}
+                          </td>
+                          <td>
+                            {{review?.companyName}}
+                          </td>
+                          <td>
+                            {{review?.address}}
+                          </td>
+                          <td>
+                            {{review?.title}}
+                          </td>
+                          <td>
+                            {{review?.description}}
+                          </td>
+                          <td>
+                            {{review?.id}}
+                          </td>
+                          <td>
+                            <ul class="list-inline mb-0">
+                              <li class="list-inline-item">
+                                <button (click)="deleteReview(review.id)" class="action-icon icon_btn delete-item"><i
+                                  class="mdi mdi-delete"></i></button>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-sm-6">
+                        <div>
+                          <h5 class="font-14 text-body">Showing quotes 1 to {{pageSize}}
+                            of </h5>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="float-sm-end">
+                          <ul class="pagination pagination-rounded mb-sm-0">
+                            <li class="page-item disabled active">
+                              <button class="page-link"><i
+                                class="mdi mdi-chevron-left"></i></button>
+                            </li>
+                            <ng-container *ngFor="let page of getPages()">
+                              <li class="page-item">
+                                <button (click)="pagination(page)" class="page-link">{{page}}</button>
+                              </li>
+                            </ng-container>
+                            <li class="page-item">
+                              <button class="page-link"><i
+                                class="mdi mdi-chevron-right"></i></button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div> <!-- end card -->
+              </div> <!-- end col -->
+            </div>
+          </div>
+          <!-- end settings content-->
+
+        </div> <!-- end tab-content -->
+      </div>
+    </div> <!-- end card-->
+
+  </div> <!-- end col -->
+
+</div>

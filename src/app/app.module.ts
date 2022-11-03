@@ -13,11 +13,13 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { MessagePopupComponent } from './components/message-popup/message-popup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    MessagePopupComponent,
   ],
   imports: [
     BrowserModule,
