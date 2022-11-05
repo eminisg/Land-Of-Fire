@@ -1,8 +1,23 @@
 <div class="px-0 mx-0 w-100 row">
-  <main class="row position-relative custom-title mx-0 section" id="home">
-    <div class="align-items-start d-flex justify-content-center flex-column ps-5">
+  <main class="col-md-12 position-relative custom-title px-0 mx-0 section" id="home">
+    <div class="ps-md-5 col-md-6 custom-title_inner">
       <h1 class="page-title">Transportation Experts</h1>
-      <button class="btn btn-outline-light btn-lg mt-4" (click)="toQuotes('quote')">REQUEST A QUOTE</button>
+      <hr>
+      <p>
+        Each truck has its own capabilities, this means that the transporter has to carefully choose its way to
+        transport goods. This also affects the profit margin of the transporter, so they have to know which option fits
+        best for their goods.
+        <br>
+        <br>
+        One of the biggest challenges when it comes to transporting goods is to move them from one place to another in a
+        specific time lapse without damaging those goods. Down below you will see the different types of trucks and
+        trailers that are used in logistics worldwide.
+      </p>
+      <hr>
+      <button class="btn btn-outline-primary btn-lg mt-4" (click)="toQuotes('quote')">REQUEST A QUOTE</button>
+    </div>
+    <div class="bgi_wrapper col-md-6">
+      <img src="assets/imgs/bg_images/trucks_bgi.jpg" alt="">
     </div>
   </main>
   <section style="z-index: 10; background-color: dimgray;" class="section bottom hash-section px-0" id="service">
@@ -67,76 +82,76 @@
       </div>
     </div>
   </section>
-<!--  <section class="px-0">-->
-<!--    <div class="text-end">-->
-<!--      <h3 class="brokers-title py-2 mt-0">SEE WHAT BROKERS SAY ABOUT US</h3>-->
-<!--      <button class="border-0 bg-transparent" (click)="addReview()">add comnet</button>-->
-<!--    </div>-->
-<!--    <div class="col ">-->
-<!--      <ngx-slick-carousel class="carousel"-->
-<!--                          #slickModal="slick-carousel"-->
-<!--                          [config]="slideConfig"-->
-<!--                          (init)="slickInit($event)"-->
-<!--                          (breakpoint)="breakpoint($event)"-->
-<!--                          (afterChange)="afterChange($event)"-->
-<!--                          (beforeChange)="beforeChange($event)">-->
-<!--        <div ngxSlickItem class="slide mx-5" *ngFor="let review of displayReviews; let i =index">-->
-<!--          <div class=" mx-auto my-4">-->
-<!--            <div class="row">-->
-<!--              <div class="col-md-6">-->
-<!--                <div class="rating justify-content-start align-items-start">-->
-<!--                  <div class="card p-1 border-0 bg-transparent mb-0 shadow-none">-->
-<!--                    <figure class="rating_wrapper d-flex">-->
-<!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 1?'gold':'darkgoldenrod'}"></i>-->
-<!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 2?'gold':'darkgoldenrod'}"></i>-->
-<!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 3?'gold':'darkgoldenrod'}"></i>-->
-<!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 4?'gold':'darkgoldenrod'}"></i>-->
-<!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 5?'gold':'darkgoldenrod'}"></i>-->
-<!--                    </figure>-->
-<!--                    <time class="rating_data">{{review?.date}}</time>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--                <hr>-->
-<!--                <div class="user-rating d-flex align-items-center">-->
-<!--                  <figure style="width: 50px;height: 50px;background-color: lightgray;"-->
-<!--                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">-->
-<!--                    <img [src]="review?.imageURL" alt="" style="width: 50px;height: 50px;" *ngIf="review?.imageURL">-->
-<!--                    <i class="mdi mdi-account mdi-36px" *ngIf="!review?.imageURL"></i>-->
-<!--                  </figure>-->
-<!--                  <div class="ms-2">-->
-<!--                    <h4 class="user_name">{{review?.username}}</h4>-->
-<!--                    <h5 class="user_work_place">{{review?.address}}</h5>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--                <hr>-->
-<!--                <div class="comment-area-box">-->
-<!--                  <div class="w-75">-->
-<!--                    <div class="d-flex align-items-center">-->
-<!--                      <h4>Company: </h4>-->
-<!--                      <span class="ms-2">{{review?.companyName}}</span>-->
-<!--                    </div>-->
-<!--                    <div class="d-flex">-->
-<!--                      <i class="mdi mdi-check-bold"></i>-->
-<!--                      <p class="ms-2">Yes I Recommend this company</p>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div class="w-25">-->
+  <!--  <section class="px-0">-->
+  <!--    <div class="text-end">-->
+  <!--      <h3 class="brokers-title py-2 mt-0">SEE WHAT BROKERS SAY ABOUT US</h3>-->
+  <!--      <button class="border-0 bg-transparent" (click)="addReview()">add comnet</button>-->
+  <!--    </div>-->
+  <!--    <div class="col ">-->
+  <!--      <ngx-slick-carousel class="carousel"-->
+  <!--                          #slickModal="slick-carousel"-->
+  <!--                          [config]="slideConfig"-->
+  <!--                          (init)="slickInit($event)"-->
+  <!--                          (breakpoint)="breakpoint($event)"-->
+  <!--                          (afterChange)="afterChange($event)"-->
+  <!--                          (beforeChange)="beforeChange($event)">-->
+  <!--        <div ngxSlickItem class="slide mx-5" *ngFor="let review of displayReviews; let i =index">-->
+  <!--          <div class=" mx-auto my-4">-->
+  <!--            <div class="row">-->
+  <!--              <div class="col-md-6">-->
+  <!--                <div class="rating justify-content-start align-items-start">-->
+  <!--                  <div class="card p-1 border-0 bg-transparent mb-0 shadow-none">-->
+  <!--                    <figure class="rating_wrapper d-flex">-->
+  <!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 1?'gold':'darkgoldenrod'}"></i>-->
+  <!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 2?'gold':'darkgoldenrod'}"></i>-->
+  <!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 3?'gold':'darkgoldenrod'}"></i>-->
+  <!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 4?'gold':'darkgoldenrod'}"></i>-->
+  <!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 5?'gold':'darkgoldenrod'}"></i>-->
+  <!--                    </figure>-->
+  <!--                    <time class="rating_data">{{review?.date}}</time>-->
+  <!--                  </div>-->
+  <!--                </div>-->
+  <!--                <hr>-->
+  <!--                <div class="user-rating d-flex align-items-center">-->
+  <!--                  <figure style="width: 50px;height: 50px;background-color: lightgray;"-->
+  <!--                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">-->
+  <!--                    <img [src]="review?.imageURL" alt="" style="width: 50px;height: 50px;" *ngIf="review?.imageURL">-->
+  <!--                    <i class="mdi mdi-account mdi-36px" *ngIf="!review?.imageURL"></i>-->
+  <!--                  </figure>-->
+  <!--                  <div class="ms-2">-->
+  <!--                    <h4 class="user_name">{{review?.username}}</h4>-->
+  <!--                    <h5 class="user_work_place">{{review?.address}}</h5>-->
+  <!--                  </div>-->
+  <!--                </div>-->
+  <!--                <hr>-->
+  <!--                <div class="comment-area-box">-->
+  <!--                  <div class="w-75">-->
+  <!--                    <div class="d-flex align-items-center">-->
+  <!--                      <h4>Company: </h4>-->
+  <!--                      <span class="ms-2">{{review?.companyName}}</span>-->
+  <!--                    </div>-->
+  <!--                    <div class="d-flex">-->
+  <!--                      <i class="mdi mdi-check-bold"></i>-->
+  <!--                      <p class="ms-2">Yes I Recommend this company</p>-->
+  <!--                    </div>-->
+  <!--                  </div>-->
+  <!--                  <div class="w-25">-->
 
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="card col-md-4 ms-auto px-0 bg-transparent">-->
-<!--                <div class="card-header"><h4 class="rating_title text-center">{{review?.title}}</h4></div>-->
-<!--                <div class=" card-body">-->
-<!--                  <p>{{review?.description}}</p>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </ngx-slick-carousel>-->
-<!--    </div>-->
-<!--  </section>-->
+  <!--                  </div>-->
+  <!--                </div>-->
+  <!--              </div>-->
+  <!--              <div class="card col-md-4 ms-auto px-0 bg-transparent">-->
+  <!--                <div class="card-header"><h4 class="rating_title text-center">{{review?.title}}</h4></div>-->
+  <!--                <div class=" card-body">-->
+  <!--                  <p>{{review?.description}}</p>-->
+  <!--                </div>-->
+  <!--              </div>-->
+  <!--            </div>-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </ngx-slick-carousel>-->
+  <!--    </div>-->
+  <!--  </section>-->
   <h2 style="background-color: lightgray;color: white"
       class="section text-center py-2 m-0 sections-title -fluid"
       id="about">ABOUT
@@ -270,8 +285,8 @@
 </div>
 <div class="position-fixed" style="bottom: 1rem;right: 1rem;z-index: 99">
   <button (click)="toggleMessagePopup()"
-    class="btn-outline-danger btn d-flex align-items-center text-center justify-content-center custom-message-button"
-     type="button"><i class="mdi mdi-24px mdi-message-text me-2"></i><span>SEND US A MESSAGE</span>
+          class="btn-outline-danger btn d-flex align-items-center text-center justify-content-center custom-message-button"
+          type="button"><i class="mdi mdi-24px mdi-message-text me-2"></i><span>SEND US A MESSAGE</span>
   </button>
 </div>
 <!--<div class="position-fixed" style="bottom: 5rem;right: 1rem">-->
@@ -306,7 +321,6 @@
 <!--    </form>-->
 <!--  </div>-->
 <!--</section>-->
-
 
 
 <div class="custom_popup" *ngIf="toggleRating">

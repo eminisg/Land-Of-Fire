@@ -9,7 +9,7 @@ import {BehaviorSubject, Subject} from "rxjs";
 })
 export class FileService {
 
-  imageURL = new Subject<any>();
+  imageURL: BehaviorSubject<any> = new BehaviorSubject<any>(null)
 
   constructor(private http: HttpClient, private afStorage: AngularFireStorage) {
   }

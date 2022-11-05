@@ -47,6 +47,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getRatingData()
   }
 
   randomReviews() {
@@ -92,23 +93,32 @@ export class HomeComponent implements OnInit {
     return Math.floor(Math.random() * (max - 1)) + 1; //Максимум не включается, минимум включается
   }
 
-  // getRatingData() {
-  //   let reviewsList: any;
-  //   let count = 0
-  //   this.util.getRatingData();
-  //   this.util.ratingDataSource.subscribe((res: ReviewRequstInterface) => {
-  //     reviewsList = Object.values(res);
-  //     this.fileService.getRatingImg(reviewsList[0].id);
-  //
-  //     while (count < 3) {
-  //       count++
-  //       this.fileService.imageURL.subscribe((rez) => {
-  //         console.log(rez)
-  //       });
-  //     }
-  //
-  //   });
-  // }
+  getRatingData() {
+    let reviewsList: any;
+    let idArray: string[] = []
+    this.util.getRatingData();
+    this.util.ratingDataSource.subscribe((res: ReviewRequstInterface) => {
+      reviewsList = Object.values(res);
+      for (let i = 0; i < 3; i++) {
+        let num = this.getRandomInt(reviewsList.length)
+        this.displayReviews.push(reviewsList[num]);
+        idArray.push(reviewsList[num].id);
+        if (idArray.length === 3) {
+          this.getImages(idArray);
+        }
+      }
+    });
+  }
+
+  getImages(idArray: string[]) {
+    let imagesArray:string[] = []
+    for (let i = 0; i < idArray.length; i++) {
+      this.fileService.getRatingImg(idArray[i])
+    }
+    this.fileService.imageURL.subscribe(res => {
+      imagesArray.push(res)
+    })
+  }
 
 
   toggleMessagePopup() {

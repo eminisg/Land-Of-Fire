@@ -9,6 +9,11 @@
       max-width: 15rem;
     }
   }
+
+  .popup-wrapper {
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 1920px) {
@@ -28,6 +33,11 @@
   }
   .page-title {
     font-size: 4rem !important;
+  }
+
+  .popup-wrapper {
+    align-items: start;
+    justify-content: center;
   }
 
   .article-wrapper {
@@ -141,6 +151,14 @@
     .card-title {
       font-size: 2rem;
     }
+  }
+
+  .bgi_wrapper {
+    display: none;
+  }
+
+  .custom-title_inner {
+    padding:0 2rem ;
   }
 
   .custom_popup {

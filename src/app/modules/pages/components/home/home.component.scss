@@ -38,6 +38,7 @@ h3 {
 
 .page-title {
   font-size: 5.5rem !important;
+  color: rgb(0,0,0);
 }
 
 .bgi {
@@ -47,13 +48,12 @@ h3 {
 }
 
 .custom-title {
-  background: url('../../../../../assets/imgs/bg_images/road3.gif');
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: cover;
-  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100vw;
   height: 100vh;
+  background-color: #fff;
 }
 
 .custom-banner {
@@ -68,11 +68,17 @@ h3 {
   -o-background-size: cover;
   background-size: cover;
   display: block;
+}
 
+.bgi_wrapper {
+  justify-content: end;
+  img {
+    width: 100%;
+  }
 }
 
 .custom-article {
-  background-color: rgb(0,0,0,0.2);
+  background-color: rgb(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -81,7 +87,7 @@ h3 {
   align-items: center;
   border-radius: 2px;
   overflow: hidden;
-  border: rgb(0,0,0,0.8);
+  border: rgb(0, 0, 0, 0.8);
   padding: 2rem;
   transition: .5s transform ease-in;
   height: 304px;
@@ -237,7 +243,7 @@ h3 {
 }
 
 .rating_wrapper {
-  .mdi-star{
+  .mdi-star {
     font-size: 1.5rem;
     color: lightgray;
     outline: red;
@@ -260,13 +266,16 @@ body .slick-next {
 
 .footer_address {
   text-align: start;
-  a{
+
+  a {
     font-size: 1.75rem
   }
-  p{
+
+  p {
     font-size: 1.75rem
   }
-  span{
+
+  span {
     font-size: 1.75rem
   }
 }
@@ -277,7 +286,7 @@ body .slick-next {
   left: 5rem;
 }
 
-.custom_popup{
+.custom_popup {
   position: fixed;
   margin: 0 auto;
   max-width: 40rem;
@@ -291,7 +300,8 @@ body .slick-next {
   span {
     white-space: nowrap;
   }
-  a{
+
+  a {
     white-space: nowrap;
   }
 }
