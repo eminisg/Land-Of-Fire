@@ -14,7 +14,7 @@
         trailers that are used in logistics worldwide.
       </p>
       <hr>
-      <button class="btn btn-outline-primary btn-lg mt-4" (click)="toQuotes('quote')">REQUEST A QUOTE</button>
+      <button class="btn btn-lg btn-primary btn-lg mt-4" (click)="toQuotes('quote')">REQUEST A QUOTE</button>
     </div>
     <div class="bgi_wrapper col-md-6">
       <img src="assets/imgs/bg_images/trucks_bgi.jpg" alt="">
@@ -82,76 +82,76 @@
       </div>
     </div>
   </section>
-  <!--  <section class="px-0">-->
-  <!--    <div class="text-end">-->
-  <!--      <h3 class="brokers-title py-2 mt-0">SEE WHAT BROKERS SAY ABOUT US</h3>-->
-  <!--      <button class="border-0 bg-transparent" (click)="addReview()">add comnet</button>-->
-  <!--    </div>-->
-  <!--    <div class="col ">-->
-  <!--      <ngx-slick-carousel class="carousel"-->
-  <!--                          #slickModal="slick-carousel"-->
-  <!--                          [config]="slideConfig"-->
-  <!--                          (init)="slickInit($event)"-->
-  <!--                          (breakpoint)="breakpoint($event)"-->
-  <!--                          (afterChange)="afterChange($event)"-->
-  <!--                          (beforeChange)="beforeChange($event)">-->
-  <!--        <div ngxSlickItem class="slide mx-5" *ngFor="let review of displayReviews; let i =index">-->
-  <!--          <div class=" mx-auto my-4">-->
-  <!--            <div class="row">-->
-  <!--              <div class="col-md-6">-->
-  <!--                <div class="rating justify-content-start align-items-start">-->
-  <!--                  <div class="card p-1 border-0 bg-transparent mb-0 shadow-none">-->
-  <!--                    <figure class="rating_wrapper d-flex">-->
-  <!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 1?'gold':'darkgoldenrod'}"></i>-->
-  <!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 2?'gold':'darkgoldenrod'}"></i>-->
-  <!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 3?'gold':'darkgoldenrod'}"></i>-->
-  <!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 4?'gold':'darkgoldenrod'}"></i>-->
-  <!--                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 5?'gold':'darkgoldenrod'}"></i>-->
-  <!--                    </figure>-->
-  <!--                    <time class="rating_data">{{review?.date}}</time>-->
-  <!--                  </div>-->
-  <!--                </div>-->
-  <!--                <hr>-->
-  <!--                <div class="user-rating d-flex align-items-center">-->
-  <!--                  <figure style="width: 50px;height: 50px;background-color: lightgray;"-->
-  <!--                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">-->
-  <!--                    <img [src]="review?.imageURL" alt="" style="width: 50px;height: 50px;" *ngIf="review?.imageURL">-->
-  <!--                    <i class="mdi mdi-account mdi-36px" *ngIf="!review?.imageURL"></i>-->
-  <!--                  </figure>-->
-  <!--                  <div class="ms-2">-->
-  <!--                    <h4 class="user_name">{{review?.username}}</h4>-->
-  <!--                    <h5 class="user_work_place">{{review?.address}}</h5>-->
-  <!--                  </div>-->
-  <!--                </div>-->
-  <!--                <hr>-->
-  <!--                <div class="comment-area-box">-->
-  <!--                  <div class="w-75">-->
-  <!--                    <div class="d-flex align-items-center">-->
-  <!--                      <h4>Company: </h4>-->
-  <!--                      <span class="ms-2">{{review?.companyName}}</span>-->
-  <!--                    </div>-->
-  <!--                    <div class="d-flex">-->
-  <!--                      <i class="mdi mdi-check-bold"></i>-->
-  <!--                      <p class="ms-2">Yes I Recommend this company</p>-->
-  <!--                    </div>-->
-  <!--                  </div>-->
-  <!--                  <div class="w-25">-->
+  <section class="px-0">
+<!--    <div class="text-end">-->
+<!--      <h3 class="brokers-title py-2 mt-0">SEE WHAT BROKERS SAY ABOUT US</h3>-->
+<!--      <button class="border-0 bg-transparent" (click)="addReview()">add comnet</button>-->
+<!--    </div>-->
+    <div class="col ">
+      <ngx-slick-carousel class="carousel"
+                          #slickModal="slick-carousel"
+                          [config]="slideConfig"
+                          (init)="slickInit($event)"
+                          (breakpoint)="breakpoint($event)"
+                          (afterChange)="afterChange($event)"
+                          (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem class="slide mx-5" *ngFor="let review of displayReviews; let i =index">
+          <div class=" mx-auto my-4">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="rating justify-content-start align-items-start">
+                  <div class="card p-1 border-0 bg-transparent mb-0 shadow-none">
+                    <figure class="rating_wrapper d-flex">
+                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 1?'gold':'darkgoldenrod'}"></i>
+                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 2?'gold':'darkgoldenrod'}"></i>
+                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 3?'gold':'darkgoldenrod'}"></i>
+                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 4?'gold':'darkgoldenrod'}"></i>
+                      <i class="mdi mdi-star me-1" [ngStyle]="{'color':review?.grade >= 5?'gold':'darkgoldenrod'}"></i>
+                    </figure>
+                    <time class="rating_data">{{review?.date}}</time>
+                  </div>
+                </div>
+                <hr>
+                <div class="user-rating d-flex align-items-center">
+                  <figure style="width: 50px;height: 50px;background-color: lightgray;"
+                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">
+                    <img [src]="review?.imageURL" alt="" style="width: 50px;height: 50px;" *ngIf="review?.imageURL">
+                    <i class="mdi mdi-account mdi-36px" *ngIf="!review?.imageURL"></i>
+                  </figure>
+                  <div class="ms-2">
+                    <h4 class="user_name">{{review?.username}}</h4>
+                    <h5 class="user_work_place">{{review?.address}}</h5>
+                  </div>
+                </div>
+                <hr>
+                <div class="comment-area-box">
+                  <div class="w-75">
+                    <div class="d-flex align-items-center">
+                      <h4>Company: </h4>
+                      <span class="ms-2">{{review?.companyName}}</span>
+                    </div>
+                    <div class="d-flex">
+                      <i class="mdi mdi-check-bold"></i>
+                      <p class="ms-2">Yes I Recommend this company</p>
+                    </div>
+                  </div>
+                  <div class="w-25">
 
-  <!--                  </div>-->
-  <!--                </div>-->
-  <!--              </div>-->
-  <!--              <div class="card col-md-4 ms-auto px-0 bg-transparent">-->
-  <!--                <div class="card-header"><h4 class="rating_title text-center">{{review?.title}}</h4></div>-->
-  <!--                <div class=" card-body">-->
-  <!--                  <p>{{review?.description}}</p>-->
-  <!--                </div>-->
-  <!--              </div>-->
-  <!--            </div>-->
-  <!--          </div>-->
-  <!--        </div>-->
-  <!--      </ngx-slick-carousel>-->
-  <!--    </div>-->
-  <!--  </section>-->
+                  </div>
+                </div>
+              </div>
+              <div class="card col-md-4 ms-auto px-0 bg-transparent">
+                <div class="card-header"><h4 class="rating_title text-center">{{review?.title}}</h4></div>
+                <div class=" card-body">
+                  <p>{{review?.description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+  </section>
   <h2 style="background-color: lightgray;color: white"
       class="section text-center py-2 m-0 sections-title -fluid"
       id="about">ABOUT
@@ -179,22 +179,31 @@
     </p>
   </section>
   <h3 style="color: black" class="text-center py-1 my-5 about_us_sections-subtitle">OUR CLIENTS</h3>
-  <figure class="">
-    <div class="row d-flex align-items-center justify-content-center">
-      <img class="my-3 mx-md-3 img-fluid logo"
-           src="assets/imgs/clients/amazon.webp"
-           alt="">
-      <img class="my-3 mx-md-3 img-fluid logo"
-           src="assets/imgs/clients/landstar.webp"
-           alt="">
-      <img class="my-3 mx-md-3 img-fluid logo"
-           src="assets/imgs/clients/jbhunt.webp"
-           alt="">
-      <img class="my-3 mx-md-3 img-fluid logo"
-           src="assets/imgs/clients/robinzon.webp"
-           alt="">
-    </div>
-  </figure>
+  <div style="max-width: 70vw;margin: 0 auto">
+    <figure class="row d-flex align-items-center justify-content-center">
+      <div class="col-md-3 d-flex align-items-center justify-content-center logo-wrapper">
+        <img class="logo"
+             src="assets/imgs/clients/amazon.webp"
+             alt="">
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center logo-wrapper">
+        <img class="logo"
+             src="assets/imgs/clients/landstar.webp"
+             alt="">
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center logo-wrapper">
+        <img class="logo"
+             src="assets/imgs/clients/jbhunt.webp"
+             alt="">
+      </div>
+      <div class="col-md-3 d-flex align-items-center justify-content-center logo-wrapper">
+        <img class="logo"
+             src="assets/imgs/clients/robinzon.webp"
+             alt="">
+      </div>
+    </figure>
+  </div>
+
   <section>
     <h2 class="work_with_us-title sections-title my-5">WHY WORK WITH US</h2>
     <div class="work_with_us-articles_grid">

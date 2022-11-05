@@ -2,7 +2,7 @@ import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {AngularFireStorage} from "@angular/fire/compat/storage";
 import {getDownloadURL, getStorage, ref} from "@angular/fire/storage";
-import {BehaviorSubject, Subject} from "rxjs";
+import {BehaviorSubject, from, Observable, of, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -15,14 +15,12 @@ export class FileService {
   }
 
   postImg(data: any, id: any) {
-    this.afStorage.upload('/rating/images' + id, data.image);
+   return from (this.afStorage.upload('/rating/images' + id, data.image))
   }
 
-  getRatingImg(id?:string) {
+  getRatingImg(id?:string):Observable<any> {
     const storage = getStorage()
     const starsRef = ref(storage,`/rating/images${id}`);
-    getDownloadURL(starsRef).then((url: any) => {
-      this.imageURL.next(url);
-    })
+   return of(getDownloadURL(starsRef))
   }
 }

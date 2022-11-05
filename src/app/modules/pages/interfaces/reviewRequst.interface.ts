@@ -7,4 +7,5 @@ export class ReviewRequstInterface {
   id:string | undefined
   title:string | undefined
   username:string |undefined
+  imageUrl:string | undefined
 }

@@ -9,6 +9,7 @@ export interface QuoteInterface {
   email:string
   phone:string
   description:string
+  imageURL:string
   id:string
   date:string
 }

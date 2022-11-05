@@ -21,7 +21,7 @@ export class RatingComponent implements OnInit {
     private fileService: FileService,
     private util: UtilService,
     private activeRoute: ActivatedRoute,
-    private router:Router,
+    private router: Router,
   ) {
   }
 
@@ -57,12 +57,18 @@ export class RatingComponent implements OnInit {
 
   submit() {
     this.addData();
-    if(this.form.value.image !== undefined) {
-      this.fileService.postImg(this.form.value, this.form.value.id);
-      this.util.postQuoteData(this.form.value.id, this.form.value);
-
-      this.form.reset();
-      this.clearImage();
+    if (this.form.value.image !== undefined) {
+      this.fileService.postImg(this.form.value, this.form.value.id)
+        .pipe()
+        .subscribe(res => {
+        this.fileService.getRatingImg(this.form.value.id).subscribe((data) => {
+            this.form.value.imageURL = data
+            this.util.postQuoteData(this.form.value.id, this.form.value);
+            this.form.reset();
+            this.clearImage();
+          }
+        )
+      })
     }
   }
 
@@ -89,13 +95,13 @@ export class RatingComponent implements OnInit {
   }
 
   ratingAction() {
-    const stars = Array.from(document.getElementsByClassName('mdi-star'))as any
-    stars.forEach((star:any,i:number) => star.addEventListener('click',(action:any)=>{
+    const stars = Array.from(document.getElementsByClassName('mdi-star')) as any
+    stars.forEach((star: any, i: number) => star.addEventListener('click', (action: any) => {
       let current_star_level1 = i + 1
 
-      stars.forEach((star:any,j:number)=>{
-        if(current_star_level1 >= j+1){
-        star.classList.add('star_active')
+      stars.forEach((star: any, j: number) => {
+        if (current_star_level1 >= j + 1) {
+          star.classList.add('star_active')
         } else {
           star.classList.remove('star_active')
         }
