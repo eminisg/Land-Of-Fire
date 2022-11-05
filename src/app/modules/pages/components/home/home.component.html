@@ -67,10 +67,10 @@
       </div>
     </div>
   </section>
-<!--  <section>-->
+<!--  <section class="px-0">-->
 <!--    <div class="text-end">-->
 <!--      <h3 class="brokers-title py-2 mt-0">SEE WHAT BROKERS SAY ABOUT US</h3>-->
-<!--      <a routerLink="/reviews">add comnet</a>-->
+<!--      <button class="border-0 bg-transparent" (click)="addReview()">add comnet</button>-->
 <!--    </div>-->
 <!--    <div class="col ">-->
 <!--      <ngx-slick-carousel class="carousel"-->
@@ -80,7 +80,7 @@
 <!--                          (breakpoint)="breakpoint($event)"-->
 <!--                          (afterChange)="afterChange($event)"-->
 <!--                          (beforeChange)="beforeChange($event)">-->
-<!--        <div ngxSlickItem class="slide" *ngFor="let review of displayReviews; let i =index">-->
+<!--        <div ngxSlickItem class="slide mx-5" *ngFor="let review of displayReviews; let i =index">-->
 <!--          <div class=" mx-auto my-4">-->
 <!--            <div class="row">-->
 <!--              <div class="col-md-6">-->
@@ -100,8 +100,8 @@
 <!--                <div class="user-rating d-flex align-items-center">-->
 <!--                  <figure style="width: 50px;height: 50px;background-color: lightgray;"-->
 <!--                          class="mb-0 img-wrapper rounded align-items-center justify-content-center d-flex">-->
-<!--                    <img [src]="review?.imgURL" alt="" style="width: 50px;height: 50px;" *ngIf="review?.imgURL">-->
-<!--                    <i class="mdi mdi-account mdi-36px" *ngIf="!review?.imgURL"></i>-->
+<!--                    <img [src]="review?.imageURL" alt="" style="width: 50px;height: 50px;" *ngIf="review?.imageURL">-->
+<!--                    <i class="mdi mdi-account mdi-36px" *ngIf="!review?.imageURL"></i>-->
 <!--                  </figure>-->
 <!--                  <div class="ms-2">-->
 <!--                    <h4 class="user_name">{{review?.username}}</h4>-->
@@ -143,7 +143,7 @@
     US</h2>
   <hr class="my-0 custom-horizontal">
   <section class="container d-flex flex-column">
-    <img src="assets/imgs/logo.svg" class="w-25 mx-auto d-flex my-5" style="max-width: 10rem" alt="">
+    <img src="assets/imgs/logo.svg" class="w-25 mx-auto d-flex my-5" style="max-width: 10rem;min-width: 8rem" alt="">
     <p class="card-body mx-auto col-md-6">
       ABOUT US
       Reefer, DryVan or Stepdeck we got you covered. Being a truck driver for 5 years himself the founder of
@@ -268,7 +268,7 @@
     </div>
   </section>
 </div>
-<div class="position-fixed" style="bottom: 1rem;right: 1rem">
+<div class="position-fixed" style="bottom: 1rem;right: 1rem;z-index: 99">
   <button (click)="toggleMessagePopup()"
     class="btn-outline-danger btn d-flex align-items-center text-center justify-content-center custom-message-button"
      type="button"><i class="mdi mdi-24px mdi-message-text me-2"></i><span>SEND US A MESSAGE</span>

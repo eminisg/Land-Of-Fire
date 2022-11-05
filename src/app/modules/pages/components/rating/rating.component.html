@@ -1,49 +1,60 @@
-<section class="col-md-12 ">
-  <div class="card col-md-6 mx-auto mt-4" style="z-index: 999;">
-    <h2 class="card-header">Add Your Review</h2>
+<section class="col-md-12 align-items-center justify-content-center d-flex" style="height: 100vh">
+  <div class="card col-md-8 popup-inner">
+    <div class="card-header my-0 d-flex align-items-center justify-content-between">
+      <h2 >Add Your Review</h2>
+      <a class="bg-transparent border-0" href="#"><i class="mdi mdi-close fs-1 "></i></a>
+    </div>
     <div class="card-body">
-      <div class="flex-column mt-5">
+      <div class="flex-column">
         <form [formGroup]="form" (submit)="submit()">
-          <div class="col-sm-12 mb-4 custom_rating flex-column">
-            <label class="form-label">Grade</label>
-<!--            <input type="text" id="grade" class="form-control">-->
-            <div>
-              <i class="mdi mdi-star custom_star"></i>
-              <i class="mdi mdi-star custom_star"></i>
-              <i class="mdi mdi-star custom_star"></i>
-              <i class="mdi mdi-star custom_star"></i>
-              <i class="mdi mdi-star custom_star"></i>
+          <div class="row">
+            <div class="col-sm-12  mb-2 custom_rating flex-column">
+              <label class="form-label">Grade</label>
+              <!--            <input type="text" id="grade" class="form-control">-->
+              <div>
+                <i class="mdi mdi-star custom_star"></i>
+                <i class="mdi mdi-star custom_star"></i>
+                <i class="mdi mdi-star custom_star"></i>
+                <i class="mdi mdi-star custom_star"></i>
+                <i class="mdi mdi-star custom_star"></i>
+              </div>
             </div>
-
+            <div class="col-md-6">
+              <div class="col-sm-12  mb-2">
+                <label for="username" class="form-label">User Name</label>
+                <input type="text" id="username" class="form-control" formControlName="username">
+              </div>
+              <div class="col-sm-12  mb-2">
+                <label for="companyName" class="form-label">Company</label>
+                <input type="text" id="companyName" class="form-control" formControlName="companyName">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-sm-12  mb-2">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" id="address" class="form-control" formControlName="address">
+              </div>
+              <div class="col-sm-12  mb-2">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" id="title" class="form-control" formControlName="title">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-sm-12  mb-2">
+                <label for="description" class="form-label">Text</label>
+                <textarea style="min-height: 10vh" id="description" class="form-control"
+                          formControlName="description"></textarea>
+              </div>
+              <div class="mb-3 col-sm-12  d-flex flex-column">
+                <label for="image" class="form-label">Add Image</label>
+                <input id="image" class="form-control" accept="*.png.jpg.jpeg" (change)="preview($event)"
+                       type="file">
+                <img alt="" id="frame" src="" class="img-fluid w-50 my-3"/>
+                <button type="button" (click)="clearImage()" class="btn btn-primary mt-3 col-md-2">Clear</button>
+              </div>
+            </div>
           </div>
-          <div class="col-sm-12 mb-4">
-            <label for="username" class="form-label">User Name</label>
-            <input type="text" id="username" class="form-control" formControlName="username">
-          </div>
-          <div class="col-sm-12 mb-4">
-            <label for="companyName" class="form-label">Company</label>
-            <input type="text" id="companyName" class="form-control" formControlName="companyName">
-          </div>
-          <div class="col-sm-12 mb-4">
-            <label for="address" class="form-label">Address</label>
-            <input type="text" id="address" class="form-control" formControlName="address">
-          </div>
-          <div class="col-sm-12 mb-4">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" id="title" class="form-control" formControlName="title">
-          </div>
-          <div class="col-sm-12 mb-4">
-            <label for="description" class="form-label">Text</label>
-            <textarea style="min-height: 10vh" id="description" class="form-control" formControlName="description"></textarea>
-          </div>
-          <div class="mb-3 col-sm-12 d-flex flex-column">
-            <label for="image" class="form-label">Add Image</label>
-            <input id="image" class="form-control" accept="*.png.jpg.jpeg" (change)="preview($event)"
-                   type="file">
-            <img alt="" id="frame" src="" class="img-fluid w-50 my-3"/>
-            <button type="button" (click)="clearImage()" class="btn btn-primary mt-3 col-md-2">Clear</button>
-          </div>
-          <button type="submit" class="btn btn-outline-secondary col-md-4 col-sm-12">SUBMIT</button>
+          <button type="submit" class="btn btn-outline-secondary col-sm-12 ">SUBMIT</button>
         </form>
         <img src="" alt="">
       </div>

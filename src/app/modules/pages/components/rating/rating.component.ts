@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {FileService} from "../../../../services/file.service";
 import {UtilService} from "../../services/util.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -16,7 +16,13 @@ export class RatingComponent implements OnInit {
   path?: any
   fileList!: FileList
 
-  constructor(private fb: FormBuilder, private fileService: FileService, private util: UtilService, private activeRoute: ActivatedRoute) {
+  constructor(
+    private fb: FormBuilder,
+    private fileService: FileService,
+    private util: UtilService,
+    private activeRoute: ActivatedRoute,
+    private router:Router,
+  ) {
   }
 
   ngOnInit(): void {
@@ -27,14 +33,14 @@ export class RatingComponent implements OnInit {
 
   initializeForm() {
     this.form = this.fb.group({
-      image: [null, []],
-      grade: [null, []],
-      username: [null, []],
-      companyName: [null, []],
-      title: [null, []],
-      description: [null, []],
-      address: [null, []],
-      id: [null, []],
+      image: [null, [Validators.required]],
+      grade: [null, [Validators.required]],
+      username: [null, [Validators.required]],
+      companyName: [null, [Validators.required]],
+      title: [null, [Validators.required]],
+      description: [null, [Validators.required]],
+      address: [null, [Validators.required]],
+      id: [null, [Validators.required]],
       date: [''],
     })
   }
@@ -51,11 +57,13 @@ export class RatingComponent implements OnInit {
 
   submit() {
     this.addData();
-    if(this.form.value.image !== null) {
+    if(this.form.value.image !== undefined) {
       this.fileService.postImg(this.form.value, this.form.value.id);
-    }
-    this.util.postQuoteData(this.form.value.id, this.form.value);
+      this.util.postQuoteData(this.form.value.id, this.form.value);
 
+      this.form.reset();
+      this.clearImage();
+    }
   }
 
   preview(event: any) {
@@ -93,7 +101,6 @@ export class RatingComponent implements OnInit {
         }
       });
       const review = Array.from(document.getElementsByClassName('star_active'));
-      console.log(review.length)
       this.form.get('grade')?.setValue(review.length);
     }));
 

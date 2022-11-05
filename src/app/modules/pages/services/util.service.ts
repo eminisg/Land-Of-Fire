@@ -25,7 +25,7 @@ export class UtilService {
     const db = getDatabase();
     const starCountRef = ref(db, 'reviews');
     onValue(starCountRef, (snapshot) => {
-      const data = snapshot.val();
+      let data = snapshot.val()
       this.ratingDataSource.next(data);
     });
   }

@@ -9,24 +9,20 @@ import {BehaviorSubject, Subject} from "rxjs";
 })
 export class FileService {
 
-  ratingImgSource: BehaviorSubject<any> = new BehaviorSubject<any>(null)
+  imageURL = new Subject<any>();
 
   constructor(private http: HttpClient, private afStorage: AngularFireStorage) {
   }
 
-
-
-
-
   postImg(data: any, id: any) {
-    this.afStorage.upload('/files' + id, data.image);
+    this.afStorage.upload('/rating/images' + id, data.image);
   }
 
-  getRatingImg(id:any) {
+  getRatingImg(id?:string) {
     const storage = getStorage()
-    const starsRef = ref(storage, `files${id}`);
+    const starsRef = ref(storage,`/rating/images${id}`);
     getDownloadURL(starsRef).then((url: any) => {
-      this.ratingImgSource.next(url);
+      this.imageURL.next(url);
     })
   }
 }

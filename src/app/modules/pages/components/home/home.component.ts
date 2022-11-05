@@ -5,6 +5,9 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {UtilService} from "../../services/util.service";
 import {DynamicPopupService} from "../../../../services/dynamic-popup.service";
 import {MessagePopupComponent} from "../../../../components/message-popup/message-popup.component";
+import {RatingComponent} from "../rating/rating.component";
+import {async, count, map, mergeMap, take} from "rxjs";
+import {ReviewRequstInterface} from "../../interfaces/reviewRequst.interface";
 
 @Component({
   selector: 'app-home',
@@ -39,13 +42,11 @@ export class HomeComponent implements OnInit {
               private fileService: FileService,
               private fb: FormBuilder,
               private util: UtilService,
-              private dynamicPopup:DynamicPopupService,
+              private dynamicPopup: DynamicPopupService,
   ) {
   }
 
   ngOnInit(): void {
-    this.getImg();
-    this.getRatingData();
   }
 
   randomReviews() {
@@ -82,10 +83,6 @@ export class HomeComponent implements OnInit {
     this.toggleRating = !this.toggleRating
   }
 
-  getImg() {
-
-  }
-
   addData() {
     let today = new Date();
   }
@@ -95,41 +92,31 @@ export class HomeComponent implements OnInit {
     return Math.floor(Math.random() * (max - 1)) + 1; //Максимум не включается, минимум включается
   }
 
-  getRatingData() {
-    let reviewsList: any;
-    this.util.getRatingData();
-    this.util.ratingDataSource.subscribe(review => {
+  // getRatingData() {
+  //   let reviewsList: any;
+  //   let count = 0
+  //   this.util.getRatingData();
+  //   this.util.ratingDataSource.subscribe((res: ReviewRequstInterface) => {
+  //     reviewsList = Object.values(res);
+  //     this.fileService.getRatingImg(reviewsList[0].id);
+  //
+  //     while (count < 3) {
+  //       count++
+  //       this.fileService.imageURL.subscribe((rez) => {
+  //         console.log(rez)
+  //       });
+  //     }
+  //
+  //   });
+  // }
 
-      if (review) {
-        reviewsList = Object.values(review);
-        let randomNumber = 0
-        let count = 0
-        if(reviewsList.length !== 0){
-          while (count < 3) {
-            randomNumber = this.getRandomInt(reviewsList.length);
-            if (!this.displayReviews.includes(reviewsList[randomNumber])) {
-              this.displayReviews.push(reviewsList[randomNumber]);
-              count++
-            }
-          }
-        }
-
-        this.fileService.ratingImgSource.subscribe(url => {
-          if (url != null) {
-            for (let i = 0; i < 3; i++) {
-              let a = url.search(this.displayReviews[i].id);
-              if (a !== -1) {
-                this.displayReviews[i].imgURL = url
-              }
-            }
-          }
-        });
-      }
-    });
-  }
 
   toggleMessagePopup() {
     this.dynamicPopup.displayConfirmModal(MessagePopupComponent);
+  }
+
+  addReview() {
+    this.router.navigate(['/reviews'])
   }
 }
 
